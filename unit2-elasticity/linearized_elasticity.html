@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>2. Linearized elasticity &#8212; SciCADE-course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'unit2-elasticity/linearized_elasticity';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Gallery" href="Gallery.html" />
+    <link rel="prev" title="1.5. Solving nonlinear Elasticity" href="elasticity2D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../SciCADE.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SciCADE-course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../SciCADE.html">
+                    SciCADE course: Solving PDEs with FEM using NGSolve
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="modeling.html">1. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="elasticity2D.html">1.5. Solving nonlinear Elasticity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Gallery.html">3. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="elasticity3D.html">3.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twisted.html">3.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metamaterial.html">3.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Isoparametric.html">3.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics.html">3.5. Elastodynamics with Newmark time-stepping</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/JSchoeberl/ESI-Elasticity-Geometry-NGSolve" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/unit2-elasticity/linearized_elasticity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linearized elasticity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domains-with-bad-korn-constants">2.1. Domains with bad Korn constants:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linearized-elasticity">
+<h1><span class="section-number">2. </span>Linearized elasticity<a class="headerlink" href="#linearized-elasticity" title="Permalink to this heading">#</a></h1>
+<p>We assume <span class="math notranslate nohighlight">\(\nabla u\)</span> is small, and replace Green’s strain tensor
+<span class="math notranslate nohighlight">\(E(u) = \tfrac{1}{2} ( \nabla u + \nabla u^T + \nabla u^T \nabla u)\)</span> by the geometrically linearized strain tensor</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon(u) = \frac{1}{2} ( \nabla u + \nabla u^T ),
+\]</div>
+<p>and use Hooke’s material law to obtain</p>
+<div class="math notranslate nohighlight">
+\[
+-\operatorname{div} D \varepsilon (u) = f
+\]</div>
+<p>with the constitutive equation</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\varepsilon) = D \varepsilon := 2 \mu \varepsilon + \lambda \operatorname{tr} (\varepsilon) I.
+\]</div>
+<p>After geometric linearization, all stress tensors (both Piola-Kirchhff, Cauchy) coincide.
+The variational formulation is</p>
+<div class="math notranslate nohighlight">
+\[
+\int 2 \mu \varepsilon(u) : \varepsilon(v) + \lambda \operatorname{div} u \, \operatorname{div} v = \int f v
+\]</div>
+<p>Instead of the so-called <em>Lamé parameters</em> <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>, one often uses <em>Young modulus</em> <span class="math notranslate nohighlight">\(E\)</span> and the <em>Poisson ration</em> <span class="math notranslate nohighlight">\(\nu \in [0,1/2)\)</span>.
+The Young modulus <span class="math notranslate nohighlight">\(E\)</span> corresponds to the spring constant, and the <span class="math notranslate nohighlight">\(\nu\)</span> gives the relative contraction in cross direction when stretched in one direction.
+Setting</p>
+<div class="math notranslate nohighlight">
+\[
+2 \mu = \frac{E}{1 + \nu} \qquad \text{and} \qquad
+\lambda = \frac{E \nu} { (1+\nu) (1-2\nu) }
+\]</div>
+<p>relates the strain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\varepsilon = \left( \begin{array}{ccc}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; -\nu &amp; 0 \\
+    0 &amp; 0 &amp; -\nu 
+    \end{array} \right)
+\end{split}\]</div>
+<p>to the stress</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma = \left( \begin{array}{ccc}
+    E &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 
+    \end{array} \right).
+\end{split}\]</div>
+<p>Note that for <span class="math notranslate nohighlight">\(\nu \approx \tfrac{1}{2}\)</span> the linearized volume is preserved,
+it is called a nearly incompressible  material. Then <span class="math notranslate nohighlight">\(\lambda \gg \mu\)</span>.
+An example is rubber material, and also linearized problem from elasto-platicity
+are nearly incompressible. These problems are ill-conditioned, and need robust, mixed
+discretization methods.</p>
+<p>Existence and uniqueness of the variational problem are proven by Lax-Milgram leamma.
+Fundamential is</p>
+<blockquote>
+<div><p><strong>Korn’s inequality</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(V = [H_{0,D}^1]^3 := \{ v \in [H^1]^3 : v = 0 \text{ on } \Gamma_D \}\)</span>, with <span class="math notranslate nohighlight">\(|\Gamma_D| &gt; 0\)</span>. Then there  holds</p>
+<div class="math notranslate nohighlight">
+\[
+   c_K \| u \|_{H^1}^2 \leq \| \varepsilon(u) \|_{L_2}^2
+   \]</div>
+</div></blockquote>
+<p>The proof is non-trivial. It is interesting to note that 9 components of <span class="math notranslate nohighlight">\(\nabla u\)</span>
+are dominated by the 6 components of <span class="math notranslate nohighlight">\(\varepsilon(u)\)</span>.</p>
+<blockquote>
+<div><p>The bilinear-form</p>
+<div class="math notranslate nohighlight">
+\[
+  A(u,v) := \int 2 \mu \varepsilon(u) : \varepsilon(v) + \lambda \operatorname{div} u \operatorname{div} v 
+  \]</div>
+<p>is continuous and coercive with bounds</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  A(u,v) &amp; \leq  (2 \mu + \lambda) \,  \| u \|_{H^1} \, \| v \|_{H^1} \\
+  A(u,u) &amp; \geq  2 \mu c_K  \, \| u \|_{H^1}^2.
+  \end{align*}\]</div>
+</div></blockquote>
+<p>From Cea’s-Lemma we get the error estimate</p>
+<div class="math notranslate nohighlight">
+\[
+\| u - u_h \|_{H^1}^2 \leq \frac{2 \mu + \lambda}{2 \mu c_K} \inf_{v_h \in V_h} \| u - v_h \|_{H^1}^2.
+\]</div>
+<p>It means the (linearized) elasticity problem is ill conditioned if the material
+is nearly incompressible (<span class="math notranslate nohighlight">\(\lambda \gg \mu\)</span>), or Korn’s constant <span class="math notranslate nohighlight">\(c_K \ll 1\)</span>.</p>
+<section id="domains-with-bad-korn-constants">
+<h2><span class="section-number">2.1. </span>Domains with bad Korn constants:<a class="headerlink" href="#domains-with-bad-korn-constants" title="Permalink to this heading">#</a></h2>
+<p>Consider a thin rectangle <span class="math notranslate nohighlight">\(\Omega = (0,1) \times (-t/2, t/2)\)</span> with a small thickness <span class="math notranslate nohighlight">\(t\)</span>, and the function space</p>
+<div class="math notranslate nohighlight">
+\[
+V = \{ v \in [H^1(\Omega)]^2 : v = 0 \text{ on }  \{ 0 \} \times (-t/2, t/2) \}
+\]</div>
+<p>Take the function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+u(x,y) = \left( \begin{array}{c} -2xy \\ x^2 \end{array} \right) \in V,
+\end{split}\]</div>
+<p>and compute</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla u = \left( \begin{array}{cc}  -2y &amp; -2x \\ 2 x &amp; 0 \end{array} \right), \qquad
+\operatorname{sym} (\nabla u) = \left( \begin{array}{cc}  -2y &amp; 0 \\ 0 &amp; 0 \end{array} \right)
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\| \nabla u \|_{\Omega} = \tfrac{4}{3} t + \tfrac{1}{6} t^3, \qquad 
+\| \operatorname{sym} (\nabla u) \|_{\Omega} = \tfrac{1}{6} t^3
+\]</div>
+<p>We see that Korn’s constant behaves badly on thin domains:</p>
+<div class="math notranslate nohighlight">
+\[
+c_K \leq O(t^2)
+\]</div>
+<p>This is the motivation to study models on thin domains, as well as their limits on lower dimensional manifolds.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./unit2-elasticity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="elasticity2D.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Solving nonlinear Elasticity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Gallery.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Gallery</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domains-with-bad-korn-constants">2.1. Domains with bad Korn constants:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M. Neunteufel and J. Schöberl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>3.4. Isoparametric Elements &#8212; SciCADE-course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"ff62e3bd1ee54122bb9d0b7556566678": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bf94b5299fb24a7ab1d750183714e8b4": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "netgen.webgui.WebGuiWidget", "_css": "\n    .webgui-widget {\n        padding: 0px 2px;\n    }\n    .webgui_container { position: relative; }\n    .webgui_container .image { width: 100%; display: block; }\n    .webgui_overlay {\n        position: absolute; top: 0; left: 0; width: 100%; height: 100%;\n        cursor: pointer;\n    }\n    .webgui_tooltip .webgui_tooltiptext {\n        visibility: hidden;\n        background-color: rgba(85, 85, 85, 0.9); color: #fff;\n        text-align: center; border-radius: 6px; padding: 5px 10px;\n        position: absolute; top: 50%; left: 50%;\n        transform: translate(-50%, -50%); white-space: nowrap;\n    }\n    .webgui_tooltip:hover .webgui_tooltiptext { visibility: visible; }\n\n    .label3d {\n      -moz-user-select: none;\n      -ms-user-select:none;\n      -o-user-select:none;\n      -webkit-user-select: none;\n      display:block;\n      position: absolute;\n      transform: translate(-50%, -50%);\n      user-select:none;\n      z-index: 1;\n    }\n\n    .tooltiptext {\n      width: 120px;\n      background-color: #555;\n      color: #fff;\n      text-align: center;\n      border-radius: 6px;\n      padding: 5px 0;\n      position: absolute;\n      z-index: 1;\n      left: 50%;\n      margin-left: -60px;\n      opacity: 1;\n      transition: opacity 0.3s;\n    }\n\n\n    ", "_dom_classes": [], "_esm": "\n    function loadWebgui() {\n        // webgui's dist is a Vite IIFE build that assigns a global `webgui`\n        // var; it has no module exports, so it must be loaded as a classic\n        // <script> and read off of window rather than import()-ed.\n        if (window.webgui) return Promise.resolve(window.webgui);\n        if (!window._webgui_loading) {\n            window._webgui_loading = new Promise((resolve, reject) => {\n                const s = document.createElement(\"script\");\n                s.src = \"https://cdn.jsdelivr.net/npm/webgui@0.2.39/dist/webgui.js\";\n                s.onload = () => resolve(window.webgui);\n                s.onerror = reject;\n                document.head.appendChild(s);\n            });\n        }\n        return window._webgui_loading;\n    }\n\n    // dat.gui (the control panel webgui adds, top-right) injects its stylesheet\n    // into the main document <head>. When this widget is hosted by MyST it lives\n    // inside a shadow root, and head styles do not cross the shadow boundary, so\n    // the panel renders unstyled. Copy the dat.gui stylesheet into our shadow\n    // root so it applies. No-op in a normal Jupyter page (no shadow root).\n    function adoptDatGuiStyles(el) {\n        const root = el.getRootNode();\n        if (typeof ShadowRoot === 'undefined' || !(root instanceof ShadowRoot)) return;\n        if (root.querySelector('style[data-webgui-datgui]')) return;\n        let copied = false;\n        for (const style of document.querySelectorAll('head style')) {\n            const css = style.textContent || '';\n            if (/\\.dg[\\s.,{>:]/.test(css)) {\n                const clone = document.createElement('style');\n                clone.setAttribute('data-webgui-datgui', '');\n                clone.textContent = css;\n                root.appendChild(clone);\n                copied = true;\n            }\n        }\n        return copied;\n    }\n\n    // The render data is normally the `value` trait itself. When `value` is a\n    // string it is instead a URL to a JSON file holding the data: the static\n    // MyST build offloads the (large) render data to a sidecar file next to the\n    // notebook to keep pages small (see scripts/widgets_to_directives.py). Fetch\n    // it in that case; otherwise use the value as-is.\n    function resolveRenderData(value) {\n        if (typeof value === 'string') {\n            return fetch(value).then((resp) => resp.json());\n        }\n        return Promise.resolve(value);\n    }\n\n    // Interactive scene view (port of WebguiView in the legacy widget.ts).\n    function renderScene(webgui, model, el) {\n        el.classList.add('webgui-widget');\n        // size the widget as requested from Python; the canvas container fills it\n\n        const scene = new webgui.Scene();\n        const container = document.createElement('div');\n        container.style.width = model.get(\"width\");\n        container.style.height = model.get(\"height\");\n        el.appendChild(container);\n\n        // defer to the next tick so the container is laid out before webgui\n        // measures it (otherwise offsetHeight is read as ~0 -> tiny canvas)\n        setTimeout(() => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                scene.init(container, render_data);\n                scene.render();\n                adoptDatGuiStyles(el);\n                // dat.gui may inject its <style> a tick after construction; retry once.\n                setTimeout(() => adoptDatGuiStyles(el), 100);\n            });\n        }, 0);\n\n        // redraw: Python sets widget.value -> push new data into the scene\n        model.on('change:value', () => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                scene.updateRenderData(render_data);\n            });\n        });\n    }\n\n    // Documentation view (port of WebguiDocuView): show a preview image and\n    // only load the interactive scene + render data on click.\n    function renderDocu(webgui, model, el) {\n        const files = model.get(\"value\");\n        const container = document.createElement('div');\n        container.className = 'webgui_container';\n        container.style.width = '100%';\n        container.innerHTML = `\n            <img src=\"${files['preview']}\" class=\"image\">\n            <div class=\"webgui_overlay webgui_tooltip\">\n                <span class=\"webgui_tooltiptext\"> Click to load interactive WebGUI </span>\n            </div>`;\n        const div = document.createElement('div');\n        div.appendChild(container);\n        el.appendChild(div);\n\n        container.addEventListener('click', () => {\n            document.body.style.cursor = 'wait';\n            fetch(files['render_data'])\n                .then((resp) => resp.json())\n                .then((render_data) => {\n                    document.body.style.cursor = '';\n                    const style = `width: ${el.clientWidth}px; height: ${el.clientHeight}px;`;\n                    container.remove();\n                    const pel = el.children[0];\n                    pel.innerHTML = '';\n                    pel.setAttribute('style', style);\n                    const scene = new webgui.Scene();\n                    scene.init(pel, render_data);\n                    scene.render();\n                    adoptDatGuiStyles(el);\n                    setTimeout(() => adoptDatGuiStyles(el), 100);\n                });\n        });\n    }\n\n    async function render({ model, el }) {\n        const webgui = await loadWebgui();\n        const value = model.get(\"value\");\n        if (value && value.render_data !== undefined && value.preview !== undefined) {\n            renderDocu(webgui, model, el);\n        } else {\n            renderScene(webgui, model, el);\n        }\n    }\n    export default { render };\n    ", "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "height": "50vh", "layout": "IPY_MODEL_ff62e3bd1ee54122bb9d0b7556566678", "tabbable": null, "tooltip": null, "value": {"gui_settings": {}, "ngsolve_version": "6.2.2604-84-gdbf8d3b1e", "mesh_dim": 2, "order2d": 2, "order3d": 2, "draw_vol": null, "draw_surf": null, "objects": [], "deformation": false, "mesh_regions_2d": 1, "mesh_regions_3d": 0, "names": ["default"], "edge_names": ["default"], "funcdim": 0, "colors": [[0.0, 1.0, 0.0, 1.0, 1.0]], "show_wireframe": true, "show_mesh": true, "Bezier_points": ["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"], "edges": ["Ka1iP4fw7T4AAAAAAAAAAGJsET9Ir1I/AAAAAAAAAAB/1/Y9PCJ+PwAAAAAAAAAAKpC1vvZcbz8AAAAAAAAAAAWfP7+2wSk/AAAAAAAAAADpj3i/0wp1PgAAAAAAAAAAVY94vzsUdb4AAAAAAAAAAGqdP7+Gwym/AAAAAAAAAACji7W+0l1vvwAAAAAAAAAAuur2PfIhfr8AAAAAAAAAAGFuET/orVK/AAAAAAAAAABJrmI/PeztvgAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAA==", "ash/P0kufD4AAAAAAAAAAHgvRT9KsS4/AAAAAAAAAABN1Lo+yFF2PwAAAAAAAAAAZg3+vSrCgj8AAAAAAAAAABGnFb+lzVg/AAAAAAAAAADBQ2m/HNj0PgAAAAAAAAAAELiDv294n7cAAAAAAAAAAJlCab+G3PS+AAAAAAAAAAAEpRW/EM9YvwAAAAAAAAAAnPn9vVHCgr8AAAAAAAAAAPbYuj7mUHa/AAAAAAAAAAAfMUU/ba8uvwAAAAAAAAAAb8h/PywpfL4AAAAAAAAAAA==", "AACAPwAAAAAAAAAAAAAAACmtYj+H8O0+AAAAAAAAAABibBE/SK9SPwAAAAAAAAAAf9f2PTwifj8AAAAAAAAAACqQtb72XG8/AAAAAAAAAAAFnz+/tsEpPwAAAAAAAAAA6Y94v9MKdT4AAAAAAAAAAFWPeL87FHW+AAAAAAAAAABqnT+/hsMpvwAAAAAAAAAAo4u1vtJdb78AAAAAAAAAALrq9j3yIX6/AAAAAAAAAABhbhE/6K1SvwAAAAAAAAAASa5iPz3s7b4AAAAAAAAAAA=="], "Bezier_trig_points": ["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"], "mesh_center": [9.68592589023487e-07, -1.5176230061531015e-07, 1.1125369292536007e-308], "mesh_radius": 1.4090675332443607, "multidim_interpolate": false, "multidim_animate": false, "deformation_scale": 1.0, "autoscale": true, "fullscreen": false}, "width": "100%"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'unit2-elasticity/Isoparametric';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.5. Elastodynamics with Newmark time-stepping" href="dynamics.html" />
+    <link rel="prev" title="3.3. Meta-material with negative Poisson ratio \(\nu\)" href="metamaterial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../SciCADE.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SciCADE-course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../SciCADE.html">
+                    SciCADE course: Solving PDEs with FEM using NGSolve
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="modeling.html">1. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="elasticity2D.html">1.5. Solving nonlinear Elasticity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="linearized_elasticity.html">2. Linearized elasticity</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Gallery.html">3. Gallery</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="elasticity3D.html">3.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twisted.html">3.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metamaterial.html">3.3. Meta material</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics.html">3.5. Elastodynamics with Newmark time-stepping</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/JSchoeberl/ESI-Elasticity-Geometry-NGSolve" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/unit2-elasticity/Isoparametric.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Isoparametric Elements</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="isoparametric-elements">
+<h1><span class="section-number">3.4. </span>Isoparametric Elements<a class="headerlink" href="#isoparametric-elements" title="Permalink to this heading">#</a></h1>
+<p>It is well known that for iso-parametric mapping (mapping order = Ansatz order), or sub-parametric mapping (mapping order &lt; Ansatz order), the physical space contains linear polynomials, and thus linearized rigid body deformations:</p>
+<div class="math notranslate nohighlight">
+\[
+P^1 \circ \Phi_{mapping} \subset V_{T^{ref}}
+\]</div>
+<p>Super-parametric mapping does not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">netgen.occ</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve.solvers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve.webgui</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Face</span><span class="p">()</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Draw</span> <span class="p">(</span><span class="n">mesh</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "bf94b5299fb24a7ab1d750183714e8b4"}</script></div>
+</div>
+<p>Open problem: can we fix the kernel by interpolating into Regge elements?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fes</span> <span class="o">=</span> <span class="n">VectorH1</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fesReg</span> <span class="o">=</span> <span class="n">HCurlCurl</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+<span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">bfa</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">InnerProduct</span> <span class="p">(</span><span class="n">Interpolate</span><span class="p">(</span><span class="n">Sym</span><span class="p">(</span><span class="n">Grad</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">fesReg</span><span class="p">,</span> <span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> 
+                                     <span class="n">Interpolate</span><span class="p">(</span><span class="n">Sym</span><span class="p">(</span><span class="n">Grad</span><span class="p">(</span><span class="n">v</span><span class="p">)),</span> <span class="n">fesReg</span><span class="p">,</span> <span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">bfa</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">InnerProduct</span> <span class="p">(</span><span class="n">Sym</span><span class="p">(</span><span class="n">Grad</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">Sym</span><span class="p">(</span><span class="n">Grad</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+<span class="n">bfm</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+<span class="n">pre</span> <span class="o">=</span> <span class="p">(</span><span class="n">bfa</span><span class="o">.</span><span class="n">mat</span><span class="o">+</span><span class="n">bfm</span><span class="o">.</span><span class="n">mat</span><span class="p">)</span><span class="o">.</span><span class="n">CreateSparseMatrix</span><span class="p">()</span><span class="o">.</span><span class="n">Inverse</span><span class="p">(</span><span class="n">inverse</span><span class="o">=</span><span class="s2">&quot;sparsecholesky&quot;</span><span class="p">)</span>
+
+<span class="nb">eval</span><span class="p">,</span> <span class="n">evec</span> <span class="o">=</span> <span class="n">LOBPCG</span><span class="p">(</span><span class="n">bfa</span><span class="o">.</span><span class="n">mat</span><span class="p">,</span> <span class="n">bfm</span><span class="o">.</span><span class="n">mat</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">printrates</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">eval</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues: [-1.6258017173078865e-17, 3.018531885882882e-17, 0.00017004176276796972, 2.72839344454848, 2.7294805324721314]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./unit2-elasticity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="metamaterial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Meta-material with negative Poisson ratio <span class="math notranslate nohighlight">\(\nu\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dynamics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Elastodynamics with Newmark time-stepping</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M. Neunteufel and J. Schöberl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
