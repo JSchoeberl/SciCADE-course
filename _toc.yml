@@ -1,0 +1,26 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: SciCADE.ipynb
+
+
+parts:
+  - caption: Elasticity
+    numbered: true
+    chapters:
+      - file: unit2-elasticity/modeling
+        sections:
+          - file: unit2-elasticity/elasticity2D.ipynb
+      - file: unit2-elasticity/linearized_elasticity          
+      - file: unit2-elasticity/Gallery
+        sections:
+          - file: unit2-elasticity/elasticity3D.ipynb
+          - file: unit2-elasticity/twisted.ipynb            
+          - file: unit2-elasticity/metamaterial.ipynb
+            title: Meta material
+          - file: unit2-elasticity/Isoparametric.ipynb
+          - file: unit2-elasticity/dynamics.ipynb                      
+
+
+
