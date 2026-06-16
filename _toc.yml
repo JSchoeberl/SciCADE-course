@@ -44,3 +44,35 @@ parts:
       - file: unit3-NavStokes/tesla.ipynb            
 
 
+
+  - caption: Discontinuous Galerkin
+    numbered: true
+    chapters:
+    - file: unit4-DG/stationary.ipynb
+    - file: unit4-DG/instationary.ipynb
+    - file: unit4-DG/Nitsche.ipynb
+    - file: unit4-DG/elliptic_stdDG.ipynb        
+    - file: unit4-DG/elliptic.ipynb        
+    - file: unit4-DG/splitting.ipynb        
+    - file: unit4-DG/fourthorder.ipynb        
+    - file: unit4-DG/stokes.ipynb        
+
+
+  - caption: Mixed and Hybrid
+    numbered: true
+    chapters:
+
+    - file: unit5-mixed/framework.ipynb
+    - file: unit5-mixed/hdiv.ipynb
+    - file: unit5-mixed/finiteelements.ipynb    
+    - file: unit5-mixed/erroranalysis.ipynb    
+    - file: unit5-mixed/erroranalysisl2h1.ipynb    
+    - file: unit5-mixed/hybridization.ipynb    
+
+
+    - file: unit5-mixed/plates/structural.ipynb    
+    - file: unit5-mixed/plates/1_hhj.ipynb
+    - file: unit5-mixed/plates/2_ReissnerMindlin.ipynb
+    - file: unit5-mixed/plates/3_shell.ipynb
+    - file: unit5-mixed/plates/4_rollup.ipynb
+    - file: unit5-mixed/plates/HCT.ipynb    
