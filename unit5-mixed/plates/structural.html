@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Structural mechanics &#8212; SciCADE-course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'unit5-mixed/plates/structural';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Kirchhoff plate equation" href="1_hhj.html" />
+    <link rel="prev" title="H(div)-conforming Stokes" href="../../unit4-DG/stokes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../SciCADE.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SciCADE-course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../SciCADE.html">
+                    SciCADE course: Solving PDEs with FEM using NGSolve
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../unit1-intro/first_example.html">1. Solving the Poisson Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit1-intro/boundary_conditions.html">2. Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit1-intro/approximation.html">3. Approximation of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit1-intro/capacitor.html">4. The electric field in a capacitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit1-intro/solvers.html">5. Iterative Solvers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../unit2-elasticity/modeling.html">6. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/elasticity2D.html">6.5. Solving nonlinear Elasticity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit2-elasticity/linearized_elasticity.html">7. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../unit2-elasticity/Gallery.html">8. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/elasticity3D.html">8.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/twisted.html">8.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/metamaterial.html">8.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/Isoparametric.html">8.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Navier-Stokes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../unit3-NavStokes/NavierStokes.html">9. Navier Stokes Equations:</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/Stokes.html">9.1. Stokes Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/Transport.html">9.2. Instationary transport equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/SchaeferTurek.html">9.3. Benchmark: Flow around a cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/naca.html">9.4. NACA airfoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/tesla.html">9.5. Tesla Valve</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/JSchoeberl/SciCADE-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/unit5-mixed/plates/structural.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Structural mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">Limit problem: fourth order equation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="structural-mechanics">
+<h1>Structural mechanics<a class="headerlink" href="#structural-mechanics" title="Permalink to this heading">#</a></h1>
+<p>Many engineering applications involve thin structures (walls of a building, body of a car, …).
+On thin structures, the standard approach has a problem: One observed that the simulation
+results get worse as the thickness decreases. The explanation is that the constant in
+Korn’s inequality gets small for thin structures. To understand and overcome this problem,
+we go over to beam, plate and shell models.</p>
+<p>We consider a thin (<span class="math notranslate nohighlight">\(t \ll 1\)</span>) two-dimensional body</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega = I \times (-t/2, t/2) \qquad \mbox{with} \qquad I = (0,1)
+\]</div>
+<p>The goal is to derive a system of one-dimensional equations to describe the two-dimensional
+deformation. This we obtain by a semi-discretization. Define</p>
+<div class="math notranslate nohighlight">
+\[
+\widetilde V_M = \left\{ \left(u_x(x,y) \atop u_y(x,y) \right) \in V :
+ u_x(x,y) = \sum_{i=0}^{M_x} u_x^i(x) y^i , \; u_y(x,y) = \sum_{i=0}^{M_y} u_y^i(x) y^i \right\}.
+\]</div>
+<p>This function space on <span class="math notranslate nohighlight">\(\Omega \subset {\mathbb R}^2\)</span> is isomorph to a one-dimensional
+function space with values in <span class="math notranslate nohighlight">\({\mathbb R}^{M_x+M_y+2}\)</span>. We perform semi-discretization
+by searching for
+<span class="math notranslate nohighlight">\(\tilde u \in \widetilde V_M\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+A(\tilde u, \tilde v) = f(\tilde v) \qquad \forall \, \tilde v \in \widetilde V_M.
+\]</div>
+<p>As <span class="math notranslate nohighlight">\(M_x, M_y \rightarrow \infty\)</span>, <span class="math notranslate nohighlight">\(\widetilde V_M \rightarrow V\)</span>, and
+we obtain convergence <span class="math notranslate nohighlight">\(\tilde u \rightarrow u\)</span>.</p>
+<p>The lowest order (qualitative) good approximating semi-discrete space is to set
+<span class="math notranslate nohighlight">\(M_x = 1\)</span> and <span class="math notranslate nohighlight">\(M_y = 0\)</span>. This is</p>
+<div class="math notranslate nohighlight">
+\[
+\widetilde V = \left\{ \left( U(x) - \beta(x) y  \atop w(x) \right) \right\}
+\]</div>
+<p>For</p>
+<div class="math notranslate nohighlight">
+\[
+u = \left( U(x) - \beta(x) y \atop w(x) \right) 
+\]</div>
+<p>one easily finds</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\varepsilon(u) = \left( \begin{array}{cc}
+     U^\prime(x) - y \beta^\prime &amp; \tfrac{1}{2} (w^\prime - \beta) \\
+     \text{sym} &amp; 0  
+     \end{array} \right)
+\end{split}\]</div>
+<p>Evaluating the bilinear-form (of an isotropic material) by integrating in vertical direction leads to</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  A\left( \left( U - y \beta \atop w \right), \left( \tilde U - y \tilde \beta \atop \tilde w \right) \right) &amp; =  
+  (2 \mu + \lambda) t \int_0^1 U^\prime \tilde U^\prime \, dx + \\
+&amp;  (2 \mu + \lambda) \frac{t^3}{12} \int_0^1 \beta^\prime \tilde \beta^\prime + 
+  2 \mu \frac{t}{2} \int_0^1 (w^\prime - \beta) (\tilde w^\prime - \tilde \beta) \, dx
+\end{align*}\]</div>
+<p>The meaning of the three functions is as follows. The function <span class="math notranslate nohighlight">\(U(x)\)</span> is the average
+(over the cross section) longitudinal displacement, <span class="math notranslate nohighlight">\(w(x)\)</span> is the vertical displacement.
+The function <span class="math notranslate nohighlight">\(\beta\)</span> is the linearized rotation of the normal vector.</p>
+<p>We assume that the load <span class="math notranslate nohighlight">\(f(x,y)\)</span> does not depend on <span class="math notranslate nohighlight">\(y\)</span>. Then, the linear form is</p>
+<div class="math notranslate nohighlight">
+\[
+f \left( \tilde U-y \tilde  \beta \atop \tilde w \right) = 
+t \int_0^1 f_x \tilde U \, dx + t \int_0^1 f_y \tilde w \, dx
+\]</div>
+<p>The semi-discretization in this space leads to two decoupled problems. The first one
+describes the longitudinal displacement: Find <span class="math notranslate nohighlight">\(U \in H^1(I)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+(2 \mu + \lambda) t \, \int_0^1 U^\prime \tilde U^\prime \, dx = 
+t \int_0^1 f_x \tilde U \, dx \qquad \forall \, \tilde U \in H^1(I).
+\]</div>
+<p>The small thickness parameter <span class="math notranslate nohighlight">\(t\)</span> cancels out. It is a simple second order problem
+for the longitudinal displacement.</p>
+<p>The second problems involves the 1D functions <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>: Find <span class="math notranslate nohighlight">\((w,\beta) \in V = ?\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[
+(2\mu+\lambda) \frac{t^3}{12} \int_0^1 \beta^\prime \tilde \beta^\prime \, dx + \mu t \int_0^1 (w^\prime - \beta) (\tilde w^\prime - \tilde \beta) \, dx = t \int_0^1 f_y \tilde w \, dx
+\qquad \forall \, (\tilde w, \tilde \beta) \in V
+\]</div>
+<p>The first term models bending. The derivative of the rotation <span class="math notranslate nohighlight">\(\beta\)</span> is (approximative)
+the curvature of the deformed beam. The second one is called the shear term: For thin
+beams, the angle <span class="math notranslate nohighlight">\(\beta \approx \tan \beta\)</span> is approximately <span class="math notranslate nohighlight">\(w^\prime\)</span>. This term
+measures the difference <span class="math notranslate nohighlight">\(w^\prime - \beta\)</span>.
+This second problem is called the Timoshenko beam model.</p>
+<p>For simplification, we skip the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>, and the constants.
+We rescale the equation by dividing by <span class="math notranslate nohighlight">\(t^3\)</span>: Find <span class="math notranslate nohighlight">\((w,\beta)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\int \beta^\prime \tilde \beta^\prime \, dx + \frac{1}{t^2} \int (w^\prime - \beta) (\tilde w^\prime - \tilde \beta) \, dx = \int t^{-2} f \tilde w \, dx.
+\]</div>
+<p>This scaling in <span class="math notranslate nohighlight">\(t\)</span> is natural. With <span class="math notranslate nohighlight">\(t \rightarrow 0\)</span>, and a force density <span class="math notranslate nohighlight">\(f \sim t^2\)</span>,
+the deformation converges to a limit. We define the scaled force density
+$<span class="math notranslate nohighlight">\(
+\tilde f = t^{-2} f
+\)</span>$</p>
+<p>In principle, this is a well posed problem in <span class="math notranslate nohighlight">\([H^1]^2\)</span>:</p>
+<blockquote>
+<div><p><strong>Lemma:</strong> Assume boundary conditions <span class="math notranslate nohighlight">\(w(0) = \beta(0) = 0\)</span>. The
+bilinear-form <span class="math notranslate nohighlight">\(A((w,\beta), (\tilde w, \tilde \beta))\)</span> of the Timoshenko model is
+continuous</p>
+<div class="math notranslate nohighlight">
+\[
+  A( (w,\beta), (\tilde w, \tilde \beta)) \preceq t^{-2} 
+  ( \| w \|_{H^1} + \| \beta \|_{H^1} ) ( \| \tilde w \|_{H^1} + \| \tilde \beta \|_{H^1} )
+  \]</div>
+<p>and coercive
+$<span class="math notranslate nohighlight">\(
+  A ( (w, \beta), (w, \beta) ) \succeq \| w \|_{H^1}^2 + \| \beta \|_{H^1}^2
+  \)</span>$</p>
+</div></blockquote>
+<p><em>Proof:</em> exercise</p>
+<p>As the thickness <span class="math notranslate nohighlight">\(t\)</span> becomes small, the ratio of the continuity and coercivity
+bounds becomes large ! This ratio occurs in the error estimates, and indicates
+problems. Really, numerical computations show bad convergence for small thickness <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>The large coefficient in front of the term <span class="math notranslate nohighlight">\(\int (w^\prime - \beta) (\tilde w^\prime - \tilde \beta)\)</span> forces the difference <span class="math notranslate nohighlight">\(w^\prime - \beta\)</span> to be small. If we use piece-wise linear
+finite elements for <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, then <span class="math notranslate nohighlight">\(w_h^\prime\)</span> is a piece-wise constant function,
+and <span class="math notranslate nohighlight">\(\beta_h\)</span> is continuous. If <span class="math notranslate nohighlight">\(w_h^\prime - \beta_h \approx 0\)</span>, then <span class="math notranslate nohighlight">\(\beta_h\)</span> must
+be a constant function !</p>
+<p>The idea is to weaken the term with the large coefficient. We plug in the
+projection <span class="math notranslate nohighlight">\(P^0\)</span> into piece-wise constant functions: Find <span class="math notranslate nohighlight">\((w_h, \beta_h)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\int \beta_h^\prime \tilde \beta_h^\prime \, dx + \frac{1}{t^2} \int P^0 (w_h^\prime - \beta_h) \, P^0 (\tilde w_h^\prime - \tilde \beta_h) \, dx = \int \tilde f \tilde w_h \, dx.
+\]</div>
+<p>Now, there are finite element functions <span class="math notranslate nohighlight">\(w_h\)</span> and <span class="math notranslate nohighlight">\(\beta_h\)</span> fulfilling <span class="math notranslate nohighlight">\(P^0 (w_h^\prime - \beta_h) \approx 0\)</span>.</p>
+<p>In the engineering community there are many such tricks to modify the bilinear-form.
+Our goal is to understand and analyze the obtained method.</p>
+<p>Again, the key is a mixed method. Start from the bilinear-form and introduce a
+new variable</p>
+<div class="math notranslate nohighlight">
+\[
+p = t^{-2} (w^\prime - \beta).
+\]</div>
+<p>Using the new variable in the bilinear-form, and formulating the definition
+of <span class="math notranslate nohighlight">\(p\)</span> in weak form
+leads to the big system: Find <span class="math notranslate nohighlight">\((w,\beta) \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccccll}
+\int \beta^\prime \tilde \beta^\prime \, dx &amp; + &amp; \int (\tilde
+                                                  w^\prime - \tilde \beta) p \, dx &amp; = &amp;
+\int \tilde f \tilde w \, dx \qquad &amp; \forall \, (\tilde w, \tilde \beta) \in V  \\[0.5em]
+\int (w^\prime - \beta) \tilde p \, dx &amp; - &amp; t^2 \int p \, \tilde p \, dx &amp; = &amp; 0 &amp; 
+\forall \, \tilde p \in Q.
+\end{array}
+\end{split}\]</div>
+<p>This is a mixed formulation of the abstract structure: Find <span class="math notranslate nohighlight">\(u \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such
+that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93d317d1-9894-444d-a158-5be9b5150e50">
+<span class="eqno">()<a class="headerlink" href="#equation-93d317d1-9894-444d-a158-5be9b5150e50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{array}{ccccll}
+a(u,v) &amp; + &amp; b(v,p) &amp; = &amp; f(v) \quad &amp; \forall \, v \in V, \\[0.2em]
+b(u,q) &amp; - &amp; t^2 c(p,q) &amp; = &amp; 0 \quad &amp; \forall \, q \in Q.
+\end{array}
+\end{equation}\]</div>
+<p>The big advantage now is that the parameter <span class="math notranslate nohighlight">\(t\)</span> does not occur in the denominator,
+and the limit <span class="math notranslate nohighlight">\(t \rightarrow 0\)</span> can be performed.</p>
+<p>This is a family of well posed problems:</p>
+<blockquote>
+<div><p><strong>Extended Brezzi’s Theorem:</strong> Assume that the assumptions of Brezzi’s Theorem
+are true. Furthermore, assume that</p>
+<div class="math notranslate nohighlight">
+\[
+  a(u,u) \geq 0,
+  \]</div>
+<p>and <span class="math notranslate nohighlight">\(c(p,q)\)</span> is a symmetric, continuous and non-negative bilinear-form.
+Then, the big form</p>
+<div class="math notranslate nohighlight">
+\[
+  B((u,p),(v,q)) = a(u,v) + b(u,q) + b(v,p) - t^2 \, c(p,q)
+  \]</div>
+<p>is continuous and stable uniformly in <span class="math notranslate nohighlight">\(t \in [0,1]\)</span>.</p>
+</div></blockquote>
+<p>We check Brezzi’s condition for the beam model. The spaces are <span class="math notranslate nohighlight">\(V = [H^1]^2\)</span>
+and <span class="math notranslate nohighlight">\(Q = L_2\)</span>. Continuity of the bilinear-forms <span class="math notranslate nohighlight">\(a(.,.)\)</span>, <span class="math notranslate nohighlight">\(b(.,.)\)</span>, and <span class="math notranslate nohighlight">\(c(.,.)\)</span>
+is clear. The LBB condition is</p>
+<div class="math notranslate nohighlight">
+\[
+\sup_{w,\beta} \frac{ \int (w^\prime - \beta) q \, dx } { \| w \|_{H^1} + \| \beta \|_{H^1} }
+\succeq \| q \|_{L_2}
+\]</div>
+<p>We construct a candidate for the supremum:</p>
+<div class="math notranslate nohighlight">
+\[
+w(x) = \int_0^x q(s) \, ds \qquad \mbox{and} \qquad \beta = 0
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ \int (w^\prime - \beta) q \, dx } { \| w \|_{H^1} + \| \beta \|_{H^1} }
+\succeq \frac{ \int q^2 \, dx } { \| w^\prime \| } = \| q \|_{L_2}
+\]</div>
+<p>Finally, we have to check kernel coercivity. The kernel is</p>
+<div class="math notranslate nohighlight">
+\[
+V_0 = \{ (w, \beta) : \beta = w^\prime \}.
+\]</div>
+<p>On <span class="math notranslate nohighlight">\(V_0\)</span> there holds</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\| w \|_{H^1}^1 + \| \beta \|_{H^1}^2 &amp; \preceq \| w^\prime \|^2 + \| \beta \|_{H^1}^2 
+= \| \beta \|_{L_2}^2 + \| \beta \|_{H^1}^2 \\
+&amp; \preceq \| \beta^\prime \|_{L_2} 
+=  a((w,\beta), (w, \beta))
+\end{align*}\]</div>
+<p>The lowest order finite element discretization of the mixed system is to choose
+continuous and piece-wise linear elements for <span class="math notranslate nohighlight">\(w_h\)</span> and <span class="math notranslate nohighlight">\(\beta_h\)</span>, and piecewise
+constants for <span class="math notranslate nohighlight">\(p_h\)</span>. The discrete problem reads as: Find <span class="math notranslate nohighlight">\((w_h, \beta_h) \in V_h\)</span>
+and <span class="math notranslate nohighlight">\(p_h \in Q_h\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccccll}
+\int \beta_h^\prime \tilde \beta_h^\prime \, dx &amp; + &amp; \int (\tilde w_h^\prime - \beta_h) p_h \, dx &amp; = &amp;
+\int \tilde f \tilde w_h \, dx \qquad &amp; \forall \, (w_h,\beta_h) \in V_h  \\[0.5em]
+\int (w_h^\prime - \beta_h) \tilde p_h \, dx &amp; - &amp; t^2 \int p_h \, \tilde p_h \, dx &amp; = &amp; 0 &amp; 
+\forall \, \tilde p_h \in Q_h.
+\end{array}
+\end{split}\]</div>
+<p>This is a inf-sup stable system on the discrete spaces <span class="math notranslate nohighlight">\(V_h\)</span> and <span class="math notranslate nohighlight">\(Q_h\)</span>. This means,
+we obtain the <em>uniform</em> a priori error estimate</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\| (w - w_h, \beta - \beta_h) \|_{H_1} + \| p - p_h \|_{L_2} &amp; \preceq  
+\inf_{\tilde w_h, \tilde \beta_h, \tilde p_h}
+\| (w - \tilde w_h, \beta - \tilde \beta_h) \|_{H_1} + \| p - \tilde p_h \|_{L_2}  \\
+&amp; \preceq h \left\{ \| w \|_{H^2} + \| \beta \|_{H^2} + \| p \|_{H^1} \right\}
+\end{align*}\]</div>
+<p>The required regularity is realistic.</p>
+<p>The second equation of the discrete mixed system states that</p>
+<div class="math notranslate nohighlight">
+\[
+p_h = t^{-2} P^0 (w_h^\prime - \beta_h)
+\]</div>
+<p>If we insert this observation into the first row, we obtain exactly the discretization
+method with the projection operator ! Here, the mixed formulation is a tool for analyzing a
+non-standard (primal) discretization method. Both formulations are equivalent. They produce
+exactly the same finite element functions. The mixed formulation is the key for the error analysis.</p>
+<p>The two pictures below show simulations of a Timoshenko beam. It is fixed at the
+left end, the load density is constant one. We compute the vertical deformation <span class="math notranslate nohighlight">\(w(1)\)</span>
+at the right boundary. We vary the thickness <span class="math notranslate nohighlight">\(t\)</span> between <span class="math notranslate nohighlight">\(10^{-1}\)</span> and <span class="math notranslate nohighlight">\(10^{-3}\)</span>.
+The first plot shows the results of a standard conforming method, the second plot
+shows the results of the method using the projection. As the thickness decreases, the
+standard method becomes worse. Unless <span class="math notranslate nohighlight">\(h\)</span> is less than <span class="math notranslate nohighlight">\(t\)</span>, the results are completely
+wrong ! The improved method converges uniformly well with respect to <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<a class="reference internal image-reference" href="unit5-mixed/plates/timowntbad.png"><img alt="Alternative text" class="align-center" src="unit5-mixed/plates/timowntbad.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="unit5-mixed/plates/timowntgood.png"><img alt="Alternative text" class="align-center" src="unit5-mixed/plates/timowntgood.png" style="width: 300px;" /></a>
+<section id="limit-problem-fourth-order-equation">
+<h2>Limit problem: fourth order equation<a class="headerlink" href="#limit-problem-fourth-order-equation" title="Permalink to this heading">#</a></h2>
+<p>In the mixed formulation, we can set the thickness parameter <span class="math notranslate nohighlight">\(t = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccccll}
+\int \beta^\prime \tilde \beta^\prime \, dx &amp; + &amp; \int (\tilde
+                                                  w^\prime - \tilde \beta) p \, dx &amp; = &amp;
+\int \tilde f \tilde w \, dx \qquad &amp; \forall \, (\tilde w, \tilde \beta) \in V  \\[0.5em]
+\int (w^\prime - \beta) \tilde p \, dx &amp; &amp;  &amp; = &amp; 0 &amp; 
+\forall \, \tilde p \in Q.
+\end{array}
+\end{split}\]</div>
+<p>The second equation states that <span class="math notranslate nohighlight">\(\beta = w^\prime\)</span>. Testing the first equation with <span class="math notranslate nohighlight">\(\tilde \beta = \tilde w^\prime\)</span>, the upper right term on the left hand side vanishes.</p>
+<p>We have obtained the limit problem: find <span class="math notranslate nohighlight">\(w\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\int w^{\prime \prime} \tilde w^{\prime \prime} = \int f \tilde w
+\]</div>
+<p>for all test-functions <span class="math notranslate nohighlight">\(\tilde w\)</span>. Since <span class="math notranslate nohighlight">\(\beta = w^\prime \in H^1\)</span>, we have to search now <span class="math notranslate nohighlight">\(w \in H^2\)</span>.</p>
+<p>This model is called the <em>Euler</em> beam model. It is a coercive problem in <span class="math notranslate nohighlight">\(H^2\)</span>. The corresponding strong form is the fourth-order equation</p>
+<div class="math notranslate nohighlight">
+\[
+w^{\prime \prime \prime \prime} = f 
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./unit5-mixed/plates"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../unit4-DG/stokes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">H(div)-conforming Stokes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_hhj.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kirchhoff plate equation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">Limit problem: fourth order equation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M. Neunteufel and J. Schöberl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
