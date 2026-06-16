@@ -6,6 +6,15 @@ root: SciCADE.ipynb
 
 
 parts:
+  - caption: Introduction
+    numbered: true
+    chapters:
+      - file: unit1-intro/first_example.ipynb
+      - file: unit1-intro/boundary_conditions.ipynb
+      - file: unit1-intro/approximation.ipynb
+      - file: unit1-intro/capacitor.ipynb
+      - file: unit1-intro/solvers.ipynb
+
   - caption: Elasticity
     numbered: true
     chapters:
