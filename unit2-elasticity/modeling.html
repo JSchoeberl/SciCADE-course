@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>1. Modeling Elasticity &#8212; SciCADE-course</title>
+    <title>6. Modeling Elasticity &#8212; SciCADE-course</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unit2-elasticity/modeling';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. Solving nonlinear Elasticity" href="elasticity2D.html" />
-    <link rel="prev" title="SciCADE course: Solving PDEs with FEM using NGSolve" href="../SciCADE.html" />
+    <link rel="next" title="6.5. Solving nonlinear Elasticity" href="elasticity2D.html" />
+    <link rel="prev" title="5. Iterative Solvers" href="../unit1-intro/solvers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,19 +173,27 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/first_example.html">1. Solving the Poisson Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/boundary_conditions.html">2. Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/approximation.html">3. Approximation of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/capacitor.html">4. The electric field in a capacitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/solvers.html">5. Iterative Solvers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Modeling Elasticity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="elasticity2D.html">1.5. Solving nonlinear Elasticity</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">6. Modeling Elasticity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="elasticity2D.html">6.5. Solving nonlinear Elasticity</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="linearized_elasticity.html">2. Linearized elasticity</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Gallery.html">3. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="elasticity3D.html">3.1. 3D Solid Mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twisted.html">3.2. Twisted beam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metamaterial.html">3.3. Meta material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Isoparametric.html">3.4. Isoparametric Elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dynamics.html">3.5. Elastodynamics with Newmark time-stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearized_elasticity.html">7. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Gallery.html">8. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="elasticity3D.html">8.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twisted.html">8.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metamaterial.html">8.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Isoparametric.html">8.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
 </ul>
 </details></li>
 </ul>
@@ -351,10 +359,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">1.1. Kinematics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-material-laws">1.2. Elastic material laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-formulation-equilibrium">1.3. Variational formulation, equilibrium</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">6.1. Kinematics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-material-laws">6.2. Elastic material laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-formulation-equilibrium">6.3. Variational formulation, equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.4. Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -367,7 +375,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modeling-elasticity">
-<h1><span class="section-number">1. </span>Modeling Elasticity<a class="headerlink" href="#modeling-elasticity" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Modeling Elasticity<a class="headerlink" href="#modeling-elasticity" title="Permalink to this heading">#</a></h1>
 <p>Elasticity models the deformation of solid bodies under external forces. We give a short introduction into the modeling of equations.</p>
 <p>References are:</p>
 <ul class="simple">
@@ -379,7 +387,7 @@ Mathematical Foundations of Elasticity,
 Dover, 1983</p></li>
 </ul>
 <section id="kinematics">
-<h2><span class="section-number">1.1. </span>Kinematics<a class="headerlink" href="#kinematics" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Kinematics<a class="headerlink" href="#kinematics" title="Permalink to this heading">#</a></h2>
 <p>A body in rest is defined by the open set <span class="math notranslate nohighlight">\(\Omega \subset {\mathbb R}^3\)</span>.
 Due to external forces the body is deformed. The so called <em>deformation</em> is a function</p>
 <div class="math notranslate nohighlight">
@@ -432,7 +440,7 @@ E = \frac{1}{2} \big( \nabla u + \nabla u^T + \nabla u^T \nabla u \big).
 \]</div>
 </section>
 <section id="elastic-material-laws">
-<h2><span class="section-number">1.2. </span>Elastic material laws<a class="headerlink" href="#elastic-material-laws" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Elastic material laws<a class="headerlink" href="#elastic-material-laws" title="Permalink to this heading">#</a></h2>
 <p>To deform a body, one has to apply work. This is stored as deformation energy in the body.
 A body is called elastic, if the work is returned after removing the external force.</p>
 <p>A constitutive relation is called <em>hyperelastic</em>, if the deformation energy can be
@@ -482,7 +490,7 @@ W(E) = \frac{\lambda}{2} \operatorname{tr} (E)^2 + \mu E:E,
 It is similar to an elastic spring: The stored energy is <span class="math notranslate nohighlight">\(\frac{1}{2} k E^2\)</span>, with the spring constant <span class="math notranslate nohighlight">\(k\)</span> and elongation <span class="math notranslate nohighlight">\(E\)</span>.</p>
 </section>
 <section id="variational-formulation-equilibrium">
-<h2><span class="section-number">1.3. </span>Variational formulation, equilibrium<a class="headerlink" href="#variational-formulation-equilibrium" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Variational formulation, equilibrium<a class="headerlink" href="#variational-formulation-equilibrium" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(V\)</span> be a function space of feasible displacements. On <span class="math notranslate nohighlight">\(\Gamma_D\)</span> the displacement is prescribed (i.e. homogeneous or inhomogeneous Dirichlet boundary conditions).</p>
 <p>The total energy consists of the deformation energy, and potential energy due to the external forces:</p>
 <div class="math notranslate nohighlight">
@@ -561,7 +569,7 @@ deformed configuration:</p>
 <p>Usually, modeling starts with the axiomatic introduction of the Cauchy stress tensor.</p>
 </section>
 <section id="summary">
-<h2><span class="section-number">1.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>Summarizing the equation we obtain the non-linear system of partial differential equations
 of elasticity:</p>
 <blockquote>
@@ -618,12 +626,12 @@ of elasticity:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../SciCADE.html"
+       href="../unit1-intro/solvers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SciCADE course: Solving PDEs with FEM using NGSolve</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Iterative Solvers</p>
       </div>
     </a>
     <a class="right-next"
@@ -631,7 +639,7 @@ of elasticity:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Solving nonlinear Elasticity</p>
+        <p class="prev-next-title"><span class="section-number">6.5. </span>Solving nonlinear Elasticity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -651,10 +659,10 @@ of elasticity:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">1.1. Kinematics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-material-laws">1.2. Elastic material laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-formulation-equilibrium">1.3. Variational formulation, equilibrium</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">6.1. Kinematics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-material-laws">6.2. Elastic material laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-formulation-equilibrium">6.3. Variational formulation, equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.4. Summary</a></li>
 </ul>
   </nav></div>
 
