@@ -32,4 +32,15 @@ parts:
           - file: unit2-elasticity/dynamics.ipynb                      
 
 
+  - caption: Navier-Stokes
+    numbered: true
+    chapters:
+    - file: unit3-NavStokes/NavierStokes.ipynb
+      sections:
+      - file: unit3-NavStokes/Stokes.ipynb
+      - file: unit3-NavStokes/Transport.ipynb
+      - file: unit3-NavStokes/SchaeferTurek.ipynb
+      - file: unit3-NavStokes/naca.ipynb
+      - file: unit3-NavStokes/tesla.ipynb            
+
 
