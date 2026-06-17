@@ -9,11 +9,11 @@ parts:
   - caption: Introduction
     numbered: true
     chapters:
-      - file: unit1-intro/first_example.ipynb
-      - file: unit1-intro/boundary_conditions.ipynb
-      - file: unit1-intro/approximation.ipynb
-      - file: unit1-intro/capacitor.ipynb
-      - file: unit1-intro/solvers.ipynb
+      - file: unit1-intro/1_first_example.ipynb
+      - file: unit1-intro/2_boundary_conditions.ipynb
+      - file: unit1-intro/3_capacitor.ipynb
+      - file: unit1-intro/4_approximation.ipynb
+      - file: unit1-intro/5_solvers.ipynb
 
   - caption: Elasticity
     numbered: true
