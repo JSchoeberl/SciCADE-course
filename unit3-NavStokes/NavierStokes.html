@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>4. Navier Stokes Equations: &#8212; SciCADE-course</title>
+    <title>9. Navier Stokes Equations: &#8212; SciCADE-course</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unit3-NavStokes/NavierStokes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.1. Stokes Equation" href="Stokes.html" />
-    <link rel="prev" title="3.5. Elastodynamics with Newmark time-stepping" href="../unit2-elasticity/dynamics.html" />
+    <link rel="next" title="9.1. Stokes Equation" href="Stokes.html" />
+    <link rel="prev" title="8.5. Elastodynamics with Newmark time-stepping" href="../unit2-elasticity/dynamics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,58 +173,66 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/modeling.html">1. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity2D.html">1.5. Solving nonlinear Elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/1_first_example.html">1. Solving the Poisson Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/2_boundary_conditions.html">2. Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/3_capacitor.html">3. The electric field in a capacitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/4_approximation.html">4. Approximation of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/5_solvers.html">5. Iterative Solvers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/modeling.html">6. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity2D.html">6.5. Solving nonlinear Elasticity</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit2-elasticity/linearized_elasticity.html">2. Linearized elasticity</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/Gallery.html">3. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity3D.html">3.1. 3D Solid Mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/twisted.html">3.2. Twisted beam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/metamaterial.html">3.3. Meta material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/Isoparametric.html">3.4. Isoparametric Elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/dynamics.html">3.5. Elastodynamics with Newmark time-stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit2-elasticity/linearized_elasticity.html">7. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/Gallery.html">8. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity3D.html">8.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/twisted.html">8.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/metamaterial.html">8.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/Isoparametric.html">8.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Navier-Stokes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Navier Stokes Equations:</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="Stokes.html">4.1. Stokes Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Transport.html">4.2. Instationary transport equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SchaeferTurek.html">4.3. Benchmark: Flow around a cylinder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="naca.html">4.4. NACA airfoil</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tesla.html">4.5. Tesla Valve</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">9. Navier Stokes Equations:</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Stokes.html">9.1. Stokes Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Transport.html">9.2. Instationary transport equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SchaeferTurek.html">9.3. Benchmark: Flow around a cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naca.html">9.4. NACA airfoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tesla.html">9.5. Tesla Valve</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Discontinuous Galerkin</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/stationary.html">5. Stationary Transport Equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/instationary.html">6. Instationary Transport Equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/Nitsche.html">7. Nitsche’s Method for boundary and interface conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/elliptic_stdDG.html">8. DG - Methods for elliptic problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/elliptic.html">9. Hybrid DG for elliptic equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/splitting.html">10. Splitting Methods for the time-dependent convection diffusion equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/fourthorder.html">11. Fourth Order Equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/stokes.html">12. H(div)-conforming Stokes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/stationary.html">10. Stationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/instationary.html">11. Instationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/Nitsche.html">12. Nitsche’s Method for boundary and interface conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/elliptic_stdDG.html">13. DG - Methods for elliptic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/elliptic.html">14. Hybrid DG for elliptic equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/splitting.html">15. Splitting Methods for the time-dependent convection diffusion equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/fourthorder.html">16. Fourth Order Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/stokes.html">17. H(div)-conforming Stokes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mixed and Hybrid</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/framework.html">13. Application of the abstract theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/hdiv.html">14. The function space <span class="math notranslate nohighlight">\(H(\operatorname{div})\)</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/finiteelements.html">15. Finite Elements in <span class="math notranslate nohighlight">\(H(\operatorname{div})\)</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/erroranalysis.html">16. Finite Element Error Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/erroranalysisl2h1.html">17. Error Analysis in <span class="math notranslate nohighlight">\(L_2 \times H^1\)</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/hybridization.html">18. Hybridization Techniques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/structural.html">19. Structural mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/1_hhj.html">20. Kirchhoff plate equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/2_ReissnerMindlin.html">21. Reissner Mindlin plates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/3_shell.html">22. Naghdi shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/4_rollup.html">23. Fully nonlinear Koiter shell model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/HCT.html">24. The Hsieh-Clough-Tocher (HCT) elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/framework.html">18. Application of the abstract theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/hdiv.html">19. The function space <span class="math notranslate nohighlight">\(H(\operatorname{div})\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/finiteelements.html">20. Finite Elements in <span class="math notranslate nohighlight">\(H(\operatorname{div})\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/erroranalysis.html">21. Finite Element Error Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/erroranalysisl2h1.html">22. Error Analysis in <span class="math notranslate nohighlight">\(L_2 \times H^1\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/hybridization.html">23. Hybridization Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/structural.html">24. Structural mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/1_hhj.html">25. Kirchhoff plate equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/2_ReissnerMindlin.html">26. Reissner Mindlin plates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/3_shell.html">27. Naghdi shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/4_rollup.html">28. Fully nonlinear Koiter shell model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/plates/HCT.html">29. The Hsieh-Clough-Tocher (HCT) elements</a></li>
 </ul>
 
     </div>
@@ -391,7 +399,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="navier-stokes-equations">
-<h1><span class="section-number">4. </span>Navier Stokes Equations:<a class="headerlink" href="#navier-stokes-equations" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Navier Stokes Equations:<a class="headerlink" href="#navier-stokes-equations" title="Permalink to this heading">#</a></h1>
 <p>We consider the time-dependent incompressible Navier Stokes equations:</p>
 <p>Find velocity <span class="math notranslate nohighlight">\(u : \Omega \times [0,T] \rightarrow {\mathbb R}^d\)</span> and pressure <span class="math notranslate nohighlight">\(p : \Omega \times [0,T] \rightarrow {\mathbb R}\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -461,7 +469,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Elastodynamics with Newmark time-stepping</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span>Elastodynamics with Newmark time-stepping</p>
       </div>
     </a>
     <a class="right-next"
@@ -469,7 +477,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>Stokes Equation</p>
+        <p class="prev-next-title"><span class="section-number">9.1. </span>Stokes Equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
