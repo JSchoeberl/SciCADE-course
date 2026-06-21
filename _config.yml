@@ -8,7 +8,9 @@ copyright : "2026"  # Copyright year to be placed in the footer
 
 repository:
   url: https://github.com/JSchoeberl/SciCADE-course
-
+  path_to_book: "" # Leave empty if your _config.yml is in the root directory
+  branch: main     # Change to 'master' if your primary branch is master
+  
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
@@ -37,6 +39,10 @@ execute:
 html:
   use_issues_button: false
   use_repository_button: true
+
+# Enable the Google Colab launch button
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
 
 
 parse:
