@@ -439,7 +439,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="structural-mechanics">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">!</span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>--pre<span class="w"> </span>ngsolve
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="structural-mechanics">
 <h1><span class="section-number">24. </span>Structural mechanics<a class="headerlink" href="#structural-mechanics" title="Permalink to this heading">#</a></h1>
 <p>Many engineering applications involve thin structures (walls of a building, body of a car, …).
 On thin structures, the standard approach has a problem: One observed that the simulation
@@ -589,8 +598,8 @@ leads to the big system: Find <span class="math notranslate nohighlight">\((w,\b
 \end{split}\]</div>
 <p>This is a mixed formulation of the abstract structure: Find <span class="math notranslate nohighlight">\(u \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such
 that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3f74315-7163-4d03-a76c-3bc72a9b96dd">
-<span class="eqno">(24.1)<a class="headerlink" href="#equation-b3f74315-7163-4d03-a76c-3bc72a9b96dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c4ac701-8003-4a8a-8f13-8919af2272b5">
+<span class="eqno">()<a class="headerlink" href="#equation-5c4ac701-8003-4a8a-8f13-8919af2272b5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{array}{ccccll}
 a(u,v) &amp; + &amp; b(v,p) &amp; = &amp; f(v) \quad &amp; \forall \, v \in V, \\[0.2em]
 b(u,q) &amp; - &amp; t^2 c(p,q) &amp; = &amp; 0 \quad &amp; \forall \, q \in Q.
