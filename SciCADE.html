@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>SciCADE course: Solving PDEs with FEM using NGSolve &#8212; SciCADE-course</title>
+    <title>SciCADE course: Solving PDEs with FEM using NGSolve &#8212; FEM with NGSolve</title>
   
   
   
@@ -148,7 +148,7 @@
   
   
   
-    <p class="title logo__title">SciCADE-course</p>
+    <p class="title logo__title">FEM with NGSolve</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -412,9 +412,10 @@ document.write(`
 <h2>In this course we give an introduction to<a class="headerlink" href="#in-this-course-we-give-an-introduction-to" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Finite element methods, standard and non-standard</p></li>
-<li><p>Continuum mechanics, including solid mechanics and fluid dynamics</p></li>
+<li><p>Continuum mechanics, including solid and structural mechanics and fluid dynamics</p></li>
 <li><p>Computational electromagnetics</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/NGSlogo.png"><img alt="_images/NGSlogo.png" class="align-center" src="_images/NGSlogo.png" style="width: 200px;" /></a>
 </section>
 <section id="computations-with-ngsolve">
 <h2>Computations with NGSolve<a class="headerlink" href="#computations-with-ngsolve" title="Permalink to this heading">#</a></h2>
@@ -426,11 +427,11 @@ Many thanks go to the contributors to NGSolve, in particular E. Bonetti, J. Gopa
 <h3>Installing NGSolve<a class="headerlink" href="#installing-ngsolve" title="Permalink to this heading">#</a></h3>
 <p>It is easy to install NGSolve using</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pip install numpy scipy matplotlib jupyter ipyparallel scikit-build
-python -m pip install --upgrade ngsolve webgui_jupyter_widgets
+python -m pip install --upgrade ngsolve anywidget
 </pre></div>
 </div>
 <p>If you want latest pre-releases:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pip install --upgrade --pre ngsolve webgui_jupyter_widgets
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pip install --upgrade --pre ngsolve anywidget
 </pre></div>
 </div>
 <p>To test the installation, open jupyter-notebook (or jupyter-lab or VS Code), create a new notebook, create and execute a cell with</p>
@@ -522,7 +523,7 @@ Draw (unit_cube.shape);
   <div class="footer-item">
     
 <p class="component-author">
-By M. Neunteufel and J. Schöberl
+By J. Schöberl
 </p>
 
   </div>
