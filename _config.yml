@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: SciCADE-course
-author: M. Neunteufel and J. Schöberl
+title: FEM with NGSolve
+author: J. Schöberl
 # logo: NGSlogo.png
 copyright : "2026"  # Copyright year to be placed in the footer
 
@@ -17,7 +17,10 @@ execute:
   execute_notebooks: auto
   timeout: 600
   exclude_patterns:
-        - "unit-2.1-mapping/present_local/*.ipynb"                        
+        - "*/present_local/*.ipynb"
+        - "unit3*/*"
+        - "unit4-DG/*.ipynb"
+        - "unit5*/*"
   
 # Define the name of the latex output file for PDF builds
 # latex:
