@@ -35,25 +35,29 @@ parts:
   - caption: Navier-Stokes
     numbered: true
     chapters:
-    - file: unit3-NavStokes/NavierStokes.ipynb
-      sections:
-        - file: unit3-NavStokes/Stokes.ipynb
-        - file: unit3-NavStokes/Transport.ipynb
-        - file: unit3-NavStokes/SchaeferTurek.ipynb
-        - file: unit3-NavStokes/naca.ipynb
-        - file: unit3-NavStokes/tesla.ipynb            
+      - file: unit3-NavStokes/1_NavierStokes.ipynb
+      - file: unit3-NavStokes/2_Stokes.ipynb
+      - file: unit3-NavStokes/3_Transport.ipynb
+      - file: unit3-NavStokes/Gallery
+        sections:    
+          - file: unit3-NavStokes/4_SchaeferTurek.ipynb
+          - file: unit3-NavStokes/5_naca.ipynb
+          - file: unit3-NavStokes/6_tesla.ipynb            
+          - file: unit3-NavStokes/7_spacehdiv.ipynb
+          - file: unit3-NavStokes/8_morphing.ipynb            
+          - file: unit3-NavStokes/9_SurfaceSchaeferTurek.ipynb            
 
 
 
   - caption: Discontinuous Galerkin
     numbered: true
     chapters:
-    - file: unit4-DG/stationary.ipynb
-    - file: unit4-DG/instationary.ipynb
-    - file: unit4-DG/Nitsche.ipynb
-    - file: unit4-DG/elliptic_stdDG.ipynb        
-    - file: unit4-DG/elliptic.ipynb        
-    - file: unit4-DG/splitting.ipynb        
-    - file: unit4-DG/fourthorder.ipynb        
-    - file: unit4-DG/stokes.ipynb        
+    - file: unit4-DG/1_stationary.ipynb
+    - file: unit4-DG/2_instationary.ipynb
+    - file: unit4-DG/3_Nitsche.ipynb
+    - file: unit4-DG/4_elliptic_stdDG.ipynb        
+    - file: unit4-DG/5_elliptic.ipynb        
+    - file: unit4-DG/6_splitting.ipynb        
+    - file: unit4-DG/7_fourthorder.ipynb        
+    - file: unit4-DG/8_stokes.ipynb        
 
