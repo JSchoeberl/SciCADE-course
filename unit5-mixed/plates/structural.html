@@ -169,7 +169,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../SciCADE.html">
-                    SciCADE course: Solving PDEs with FEM using NGSolve
+                    Solving PDEs with FEM using NGSolve
                 </a>
             </li>
         </ul>
@@ -196,6 +196,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../../unit2-elasticity/dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Navier-Stokes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../unit3-NavStokes/1_NavierStokes.html">9. Navier Stokes Equations:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit3-NavStokes/2_Stokes.html">10. Stokes Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit3-NavStokes/3_Transport.html">11. Instationary transport equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../unit3-NavStokes/Gallery.html">12. Navier-Stokes examples:</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/4_SchaeferTurek.html">12.1. Benchmark: Flow around a cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/5_naca.html">12.2. NACA airfoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/6_tesla.html">12.3. Tesla Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/7_spacehdiv.html">12.4. The Function Space H(div)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/8_morphing.html">12.5. Navier-Stokes on moving domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../unit3-NavStokes/9_SurfaceSchaeferTurek.html">12.6. H(div)-conforming Navier-Stokes on Surfaces</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Discontinuous Galerkin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/1_stationary.html">13. Stationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/2_instationary.html">14. Instationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/3_Nitsche.html">15. Nitsche’s Method for boundary and interface conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/4_elliptic_stdDG.html">16. DG - Methods for elliptic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/5_elliptic.html">17. Hybrid DG for elliptic equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/6_splitting.html">18. Splitting Methods for the time-dependent convection diffusion equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/7_fourthorder.html">19. Fourth Order Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4-DG/8_stokes.html">20. H(div)-conforming Stokes</a></li>
 </ul>
 
     </div>
@@ -552,8 +578,8 @@ leads to the big system: Find <span class="math notranslate nohighlight">\((w,\b
 \end{split}\]</div>
 <p>This is a mixed formulation of the abstract structure: Find <span class="math notranslate nohighlight">\(u \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such
 that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-098a0224-defb-425f-9bae-c9adda307cc1">
-<span class="eqno">()<a class="headerlink" href="#equation-098a0224-defb-425f-9bae-c9adda307cc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4bc84d4e-3b6e-4e15-96c6-2d9ff3f1ff9e">
+<span class="eqno">()<a class="headerlink" href="#equation-4bc84d4e-3b6e-4e15-96c6-2d9ff3f1ff9e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{array}{ccccll}
 a(u,v) &amp; + &amp; b(v,p) &amp; = &amp; f(v) \quad &amp; \forall \, v \in V, \\[0.2em]
 b(u,q) &amp; - &amp; t^2 c(p,q) &amp; = &amp; 0 \quad &amp; \forall \, q \in Q.
