@@ -32,4 +32,28 @@ parts:
           - file: unit2-elasticity/dynamics.ipynb                      
 
 
-      
+  - caption: Navier-Stokes
+    numbered: true
+    chapters:
+    - file: unit3-NavStokes/NavierStokes.ipynb
+      sections:
+        - file: unit3-NavStokes/Stokes.ipynb
+        - file: unit3-NavStokes/Transport.ipynb
+        - file: unit3-NavStokes/SchaeferTurek.ipynb
+        - file: unit3-NavStokes/naca.ipynb
+        - file: unit3-NavStokes/tesla.ipynb            
+
+
+
+  - caption: Discontinuous Galerkin
+    numbered: true
+    chapters:
+    - file: unit4-DG/stationary.ipynb
+    - file: unit4-DG/instationary.ipynb
+    - file: unit4-DG/Nitsche.ipynb
+    - file: unit4-DG/elliptic_stdDG.ipynb        
+    - file: unit4-DG/elliptic.ipynb        
+    - file: unit4-DG/splitting.ipynb        
+    - file: unit4-DG/fourthorder.ipynb        
+    - file: unit4-DG/stokes.ipynb        
+
