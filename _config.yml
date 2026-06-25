@@ -18,7 +18,10 @@ execute:
   timeout: 600
   exclude_patterns:
         - "*/present_local/*.ipynb"
-        - "unit5*/*"
+        - "unit1*/*"
+        - "unit2*/*"
+        - "unit3*/*"
+        - "unit4*/*"        
   
 # Define the name of the latex output file for PDF builds
 # latex:
