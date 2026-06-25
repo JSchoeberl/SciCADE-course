@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>3. TDNNS &#8212; FEM with NGSolve</title>
+    <title>23. TDNNS &#8212; FEM with NGSolve</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unit5-mixed/3_TDNNS';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.7. Cooke’s membrane benchmark" href="4_Cooke-hybrid.html" />
-    <link rel="prev" title="2. Mixed Methods for the Diffusion equations" href="2_MixedLaplace.html" />
+    <link rel="next" title="23.7. Cooke’s membrane benchmark" href="4_Cooke-hybrid.html" />
+    <link rel="prev" title="22. Mixed Methods for the Diffusion equations" href="2_MixedLaplace.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,28 +173,78 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mixed and Hybrid</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_mixedmethods.html">1. Mixed Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_MixedLaplace.html">2. Mixed Methods for the Diffusion equations</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. TDNNS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="4_Cooke-hybrid.html">3.7. Cooke’s membrane benchmark</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/1_first_example.html">1. Solving the Poisson Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/2_boundary_conditions.html">2. Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/3_capacitor.html">3. The electric field in a capacitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/4_approximation.html">4. Approximation of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/5_solvers.html">5. Iterative Solvers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/modeling.html">6. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity2D.html">6.5. Solving nonlinear Elasticity</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="5_SchaeferTurek2d.html">4. Navier-Stokes with MCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit2-elasticity/linearized_elasticity.html">7. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/Gallery.html">8. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity3D.html">8.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/twisted.html">8.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/metamaterial.html">8.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/Isoparametric.html">8.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Navier-Stokes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/1_NavierStokes.html">9. Navier Stokes Equations:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/2_Stokes.html">10. Stokes Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/3_Transport.html">11. Instationary transport equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit3-NavStokes/Gallery.html">12. Navier-Stokes examples:</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/4_SchaeferTurek.html">12.1. Benchmark: Flow around a cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/5_naca.html">12.2. NACA airfoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/6_tesla.html">12.3. Tesla Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/7_spacehdiv.html">12.4. The Function Space H(div)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/8_morphing.html">12.5. Navier-Stokes on moving domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/9_SurfaceSchaeferTurek.html">12.6. H(div)-conforming Navier-Stokes on Surfaces</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Discontinuous Galerkin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/1_stationary.html">13. Stationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/2_instationary.html">14. Instationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/3_Nitsche.html">15. Nitsche’s Method for boundary and interface conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/4_elliptic_stdDG.html">16. DG - Methods for elliptic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/5_elliptic.html">17. Hybrid DG for elliptic equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/6_splitting.html">18. Splitting Methods for the time-dependent convection diffusion equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/7_fourthorder.html">19. Fourth Order Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/8_stokes.html">20. H(div)-conforming Stokes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mixed and Hybrid</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_mixedmethods.html">21. Mixed Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_MixedLaplace.html">22. Mixed Methods for the Diffusion equations</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">23. TDNNS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Cooke-hybrid.html">23.7. Cooke’s membrane benchmark</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="5_SchaeferTurek2d.html">24. Navier-Stokes with MCS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plates and Shells</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/0_structural.html">5. Structural mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/1_hhj.html">6. Kirchhoff plate equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/2_ReissnerMindlin.html">7. Reissner Mindlin plates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/3_shell.html">8. Naghdi shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/4_rollup.html">9. Fully nonlinear Koiter shell model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/5_Sydney.html">10. Sydney</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/0_structural.html">25. Structural mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/1_hhj.html">26. Kirchhoff plate equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/2_ReissnerMindlin.html">27. Reissner Mindlin plates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/3_shell.html">28. Naghdi shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/4_rollup.html">29. Fully nonlinear Koiter shell model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-plates/5_Sydney.html">30. Sydney</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curvature</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit6-curvature/Curvature.html">11. Computation of Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-curvature/Curvature.html">31. Computation of Curvature</a></li>
 </ul>
 
     </div>
@@ -389,15 +439,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-of-degrees-of-freedom">3.1. Idea of degrees of freedom</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dofs-for-a-stretched-quadrilateral">3.1.1. Dofs for a (stretched) quadrilateral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-of-degrees-of-freedom">23.1. Idea of degrees of freedom</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dofs-for-a-stretched-quadrilateral">23.1.1. Dofs for a (stretched) quadrilateral</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hellinger-reissner-mixed-methods-for-elasticity">3.2. Hellinger Reissner mixed methods for elasticity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-symmetry-mixed-methods">3.3. Reduced Symmetry mixed methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-beam-scale">3.4. The beam-scale:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-integration-by-parts-formulas">3.5. Explicit integration by parts formulas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributional-divergence">3.6. Distributional divergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hellinger-reissner-mixed-methods-for-elasticity">23.2. Hellinger Reissner mixed methods for elasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-symmetry-mixed-methods">23.3. Reduced Symmetry mixed methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-beam-scale">23.4. The beam-scale:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-integration-by-parts-formulas">23.5. Explicit integration by parts formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributional-divergence">23.6. Distributional divergence</a></li>
 </ul>
             </nav>
         </div>
@@ -410,16 +460,16 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tdnns">
-<h1><span class="section-number">3. </span>TDNNS<a class="headerlink" href="#tdnns" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">23. </span>TDNNS<a class="headerlink" href="#tdnns" title="Permalink to this heading">#</a></h1>
 <p>Tangential-Displacement and Normal-Normal-Stress. Thesis by Astrid Pechstein</p>
 <section id="idea-of-degrees-of-freedom">
-<h2><span class="section-number">3.1. </span>Idea of degrees of freedom<a class="headerlink" href="#idea-of-degrees-of-freedom" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.1. </span>Idea of degrees of freedom<a class="headerlink" href="#idea-of-degrees-of-freedom" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="../_images/trig_dofs.pdf"><img alt="Alternative text" class="align-center" src="../_images/trig_dofs.pdf" style="width: 150px;" /></a>
 <p>The tangential dofs control sliding along the edge, the linear normal component of the normal stress vector compensates force and angular momentum.</p>
 <a class="reference internal image-reference" href="../_images/tet_dofs.pdf"><img alt="Alternative text" class="align-center" src="../_images/tet_dofs.pdf" style="width: 150px;" /></a>
 <p>The tangential odfs control sliding and rotations along the face, the linear normal component of the normal stress vector compensates force and angular momentum.</p>
 <section id="dofs-for-a-stretched-quadrilateral">
-<h3><span class="section-number">3.1.1. </span>Dofs for a (stretched) quadrilateral<a class="headerlink" href="#dofs-for-a-stretched-quadrilateral" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">23.1.1. </span>Dofs for a (stretched) quadrilateral<a class="headerlink" href="#dofs-for-a-stretched-quadrilateral" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/quad_dofs.pdf"><img alt="Alternative text" class="align-center" src="../_images/quad_dofs.pdf" style="width: 250px;" /></a>
 <p>Even part of longitudinal and odd part of transversal component of displacements, and even part of longitudinal stresses prescribe stretching:
 <a class="reference internal" href="../_images/quad_dofs_stretching.pdf"><img alt="Alternative text" class="align-center" src="../_images/quad_dofs_stretching.pdf" style="width: 250px;" /></a></p>
@@ -428,7 +478,7 @@ document.write(`
 </section>
 </section>
 <section id="hellinger-reissner-mixed-methods-for-elasticity">
-<h2><span class="section-number">3.2. </span>Hellinger Reissner mixed methods for elasticity<a class="headerlink" href="#hellinger-reissner-mixed-methods-for-elasticity" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.2. </span>Hellinger Reissner mixed methods for elasticity<a class="headerlink" href="#hellinger-reissner-mixed-methods-for-elasticity" title="Permalink to this heading">#</a></h2>
 <p>Primal mixed method: Find <span class="math notranslate nohighlight">\(\sigma \in L_2^{SYM}\)</span> and <span class="math notranslate nohighlight">\(u \in [H^1]^d\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -448,7 +498,7 @@ Find <span class="math notranslate nohighlight">\(\sigma \in H(\operatorname{div
 \end{split}\]</div>
 </section>
 <section id="reduced-symmetry-mixed-methods">
-<h2><span class="section-number">3.3. </span>Reduced Symmetry mixed methods<a class="headerlink" href="#reduced-symmetry-mixed-methods" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.3. </span>Reduced Symmetry mixed methods<a class="headerlink" href="#reduced-symmetry-mixed-methods" title="Permalink to this heading">#</a></h2>
 <p>Decompose</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -476,7 +526,7 @@ u \in H(\operatorname{curl})
 <p>Arnold+Brezzi, Stenberg,…</p>
 </section>
 <section id="the-beam-scale">
-<h2><span class="section-number">3.4. </span>The beam-scale:<a class="headerlink" href="#the-beam-scale" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.4. </span>The beam-scale:<a class="headerlink" href="#the-beam-scale" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[ \int \operatorname{div} \sigma \cdot u \]</div>
 <p>is understood as</p>
@@ -517,7 +567,7 @@ u \in H(\operatorname{curl})
 </div>
 </section>
 <section id="explicit-integration-by-parts-formulas">
-<h2><span class="section-number">3.5. </span>Explicit integration by parts formulas<a class="headerlink" href="#explicit-integration-by-parts-formulas" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.5. </span>Explicit integration by parts formulas<a class="headerlink" href="#explicit-integration-by-parts-formulas" title="Permalink to this heading">#</a></h2>
 <p>The elasticity problem is equivalent to the mixed problem: Find <span class="math notranslate nohighlight">\(\sigma \in H(\operatorname{div} \operatorname{div})\)</span>  and <span class="math notranslate nohighlight">\(u \in H(\operatorname{curl})\)</span> such that for tangentially continuous <span class="math notranslate nohighlight">\(v\)</span> and normal-normal continuous <span class="math notranslate nohighlight">\(\tau\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -541,7 +591,7 @@ u \in H(\operatorname{curl})
 continuity of the displacement is implied by the space <span class="math notranslate nohighlight">\(H(\operatorname{curl})\)</span>.</p>
 </section>
 <section id="distributional-divergence">
-<h2><span class="section-number">3.6. </span>Distributional divergence<a class="headerlink" href="#distributional-divergence" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">23.6. </span>Distributional divergence<a class="headerlink" href="#distributional-divergence" title="Permalink to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\DeclareMathOperator{\opdiv}{div}\)</span> <span class="math notranslate nohighlight">\(\DeclareMathOperator{\opcurl}{curl}\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\(\sigma \in V_{dd}^k\)</span> (normal-normal continuous). Then the distributional divergence  <span class="math notranslate nohighlight">\(f := \opdiv \sigma\)</span> is</p>
 <div class="amsmath math notranslate nohighlight">
@@ -605,7 +655,7 @@ $<span class="math notranslate nohighlight">\(
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Mixed Methods for the Diffusion equations</p>
+        <p class="prev-next-title"><span class="section-number">22. </span>Mixed Methods for the Diffusion equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -613,7 +663,7 @@ $<span class="math notranslate nohighlight">\(
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Cooke’s membrane benchmark</p>
+        <p class="prev-next-title"><span class="section-number">23.7. </span>Cooke’s membrane benchmark</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -633,15 +683,15 @@ $<span class="math notranslate nohighlight">\(
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-of-degrees-of-freedom">3.1. Idea of degrees of freedom</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dofs-for-a-stretched-quadrilateral">3.1.1. Dofs for a (stretched) quadrilateral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-of-degrees-of-freedom">23.1. Idea of degrees of freedom</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dofs-for-a-stretched-quadrilateral">23.1.1. Dofs for a (stretched) quadrilateral</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hellinger-reissner-mixed-methods-for-elasticity">3.2. Hellinger Reissner mixed methods for elasticity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-symmetry-mixed-methods">3.3. Reduced Symmetry mixed methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-beam-scale">3.4. The beam-scale:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-integration-by-parts-formulas">3.5. Explicit integration by parts formulas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributional-divergence">3.6. Distributional divergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hellinger-reissner-mixed-methods-for-elasticity">23.2. Hellinger Reissner mixed methods for elasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-symmetry-mixed-methods">23.3. Reduced Symmetry mixed methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-beam-scale">23.4. The beam-scale:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-integration-by-parts-formulas">23.5. Explicit integration by parts formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributional-divergence">23.6. Distributional divergence</a></li>
 </ul>
   </nav></div>
 

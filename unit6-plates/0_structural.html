@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>5. Structural mechanics &#8212; FEM with NGSolve</title>
+    <title>25. Structural mechanics &#8212; FEM with NGSolve</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unit6-plates/0_structural';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Kirchhoff plate equation" href="1_hhj.html" />
-    <link rel="prev" title="4. Navier-Stokes with MCS" href="../unit5-mixed/5_SchaeferTurek2d.html" />
+    <link rel="next" title="26. Kirchhoff plate equation" href="1_hhj.html" />
+    <link rel="prev" title="24. Navier-Stokes with MCS" href="../unit5-mixed/5_SchaeferTurek2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,28 +173,78 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mixed and Hybrid</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/1_mixedmethods.html">1. Mixed Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/2_MixedLaplace.html">2. Mixed Methods for the Diffusion equations</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../unit5-mixed/3_TDNNS.html">3. TDNNS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../unit5-mixed/4_Cooke-hybrid.html">3.7. Cooke’s membrane benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/1_first_example.html">1. Solving the Poisson Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/2_boundary_conditions.html">2. Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/3_capacitor.html">3. The electric field in a capacitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/4_approximation.html">4. Approximation of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1-intro/5_solvers.html">5. Iterative Solvers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/modeling.html">6. Modeling Elasticity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity2D.html">6.5. Solving nonlinear Elasticity</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/5_SchaeferTurek2d.html">4. Navier-Stokes with MCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit2-elasticity/linearized_elasticity.html">7. Linearized elasticity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit2-elasticity/Gallery.html">8. Gallery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/elasticity3D.html">8.1. 3D Solid Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/twisted.html">8.2. Twisted beam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/metamaterial.html">8.3. Meta material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/Isoparametric.html">8.4. Isoparametric Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit2-elasticity/dynamics.html">8.5. Elastodynamics with Newmark time-stepping</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Navier-Stokes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/1_NavierStokes.html">9. Navier Stokes Equations:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/2_Stokes.html">10. Stokes Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3-NavStokes/3_Transport.html">11. Instationary transport equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit3-NavStokes/Gallery.html">12. Navier-Stokes examples:</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/4_SchaeferTurek.html">12.1. Benchmark: Flow around a cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/5_naca.html">12.2. NACA airfoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/6_tesla.html">12.3. Tesla Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/7_spacehdiv.html">12.4. The Function Space H(div)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/8_morphing.html">12.5. Navier-Stokes on moving domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit3-NavStokes/9_SurfaceSchaeferTurek.html">12.6. H(div)-conforming Navier-Stokes on Surfaces</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Discontinuous Galerkin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/1_stationary.html">13. Stationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/2_instationary.html">14. Instationary Transport Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/3_Nitsche.html">15. Nitsche’s Method for boundary and interface conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/4_elliptic_stdDG.html">16. DG - Methods for elliptic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/5_elliptic.html">17. Hybrid DG for elliptic equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/6_splitting.html">18. Splitting Methods for the time-dependent convection diffusion equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/7_fourthorder.html">19. Fourth Order Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4-DG/8_stokes.html">20. H(div)-conforming Stokes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mixed and Hybrid</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/1_mixedmethods.html">21. Mixed Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/2_MixedLaplace.html">22. Mixed Methods for the Diffusion equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../unit5-mixed/3_TDNNS.html">23. TDNNS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unit5-mixed/4_Cooke-hybrid.html">23.7. Cooke’s membrane benchmark</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit5-mixed/5_SchaeferTurek2d.html">24. Navier-Stokes with MCS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plates and Shells</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Structural mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_hhj.html">6. Kirchhoff plate equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_ReissnerMindlin.html">7. Reissner Mindlin plates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_shell.html">8. Naghdi shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_rollup.html">9. Fully nonlinear Koiter shell model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_Sydney.html">10. Sydney</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">25. Structural mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_hhj.html">26. Kirchhoff plate equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_ReissnerMindlin.html">27. Reissner Mindlin plates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_shell.html">28. Naghdi shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_rollup.html">29. Fully nonlinear Koiter shell model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Sydney.html">30. Sydney</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curvature</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit6-curvature/Curvature.html">11. Computation of Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit6-curvature/Curvature.html">31. Computation of Curvature</a></li>
 </ul>
 
     </div>
@@ -389,7 +439,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">5.1. Limit problem: fourth order equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">25.1. Limit problem: fourth order equation</a></li>
 </ul>
             </nav>
         </div>
@@ -402,7 +452,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="structural-mechanics">
-<h1><span class="section-number">5. </span>Structural mechanics<a class="headerlink" href="#structural-mechanics" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">25. </span>Structural mechanics<a class="headerlink" href="#structural-mechanics" title="Permalink to this heading">#</a></h1>
 <p>Many engineering applications involve thin structures (walls of a building, body of a car, …).
 On thin structures, the standard approach has a problem: One observed that the simulation
 results get worse as the thickness decreases. The explanation is that the constant in
@@ -548,8 +598,8 @@ leads to the big system: Find <span class="math notranslate nohighlight">\((w,\b
 \end{split}\]</div>
 <p>This is a mixed formulation of the abstract structure: Find <span class="math notranslate nohighlight">\(u \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such
 that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96900bdb-967a-4f3c-9432-58bcc36fdd50">
-<span class="eqno">()<a class="headerlink" href="#equation-96900bdb-967a-4f3c-9432-58bcc36fdd50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2dc7a553-3871-4d6d-944e-12f3e9535fcc">
+<span class="eqno">(25.1)<a class="headerlink" href="#equation-2dc7a553-3871-4d6d-944e-12f3e9535fcc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{array}{ccccll}
 a(u,v) &amp; + &amp; b(v,p) &amp; = &amp; f(v) \quad &amp; \forall \, v \in V, \\[0.2em]
 b(u,q) &amp; - &amp; t^2 c(p,q) &amp; = &amp; 0 \quad &amp; \forall \, q \in Q.
@@ -647,7 +697,7 @@ wrong ! The improved method converges uniformly well with respect to <span class
 <a class="reference internal image-reference" href="../_images/timowntbad.png"><img alt="Alternative text" class="align-center" src="../_images/timowntbad.png" style="width: 300px;" /></a>
 <a class="reference internal image-reference" href="../_images/timowntgood.png"><img alt="Alternative text" class="align-center" src="../_images/timowntgood.png" style="width: 300px;" /></a>
 <section id="limit-problem-fourth-order-equation">
-<h2><span class="section-number">5.1. </span>Limit problem: fourth order equation<a class="headerlink" href="#limit-problem-fourth-order-equation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">25.1. </span>Limit problem: fourth order equation<a class="headerlink" href="#limit-problem-fourth-order-equation" title="Permalink to this heading">#</a></h2>
 <p>In the mixed formulation, we can set the thickness parameter <span class="math notranslate nohighlight">\(t = 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -710,7 +760,7 @@ w^{\prime \prime \prime \prime} = f
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Navier-Stokes with MCS</p>
+        <p class="prev-next-title"><span class="section-number">24. </span>Navier-Stokes with MCS</p>
       </div>
     </a>
     <a class="right-next"
@@ -718,7 +768,7 @@ w^{\prime \prime \prime \prime} = f
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Kirchhoff plate equation</p>
+        <p class="prev-next-title"><span class="section-number">26. </span>Kirchhoff plate equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -738,7 +788,7 @@ w^{\prime \prime \prime \prime} = f
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">5.1. Limit problem: fourth order equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-problem-fourth-order-equation">25.1. Limit problem: fourth order equation</a></li>
 </ul>
   </nav></div>
 
