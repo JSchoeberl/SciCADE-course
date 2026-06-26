@@ -92,3 +92,16 @@ parts:
     numbered: true
     chapters:
     - file: unit6-curvature/Curvature.ipynb
+
+
+  - caption: Maxwell
+    numbered: true
+    chapters:
+    - file: unit7-Maxwell/Maxwell.ipynb
+    - file: unit7-Maxwell/magnetostatics.ipynb
+    - file: unit7-Maxwell/coil-simple.ipynb
+    - file: unit7-Maxwell/coil.ipynb
+    - file: unit7-Maxwell/HCurl.ipynb
+    - file: unit7-Maxwell/deRham.ipynb
+    - file: unit7-Maxwell/checkrank.ipynb            
+  
