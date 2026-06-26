@@ -105,12 +105,12 @@ parts:
     - file: unit7-Maxwell/6_deRham.ipynb
     - file: unit7-Maxwell/7_checkrank.ipynb            
 
-  - cation: Additional
+  - caption: Additional
     numbered: true
     chapters:
-    - file: additional/preconditioning.ipynb    
-    - file: additional/implementing.ipynb
-    - file: additional/bem.ipynb
+    - file: additional-topics/preconditioning.ipynb    
+    - file: additional-topics/implementing.ipynb
+    - file: additional-topics/bem.ipynb
     - url: https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf
       title: Hypercomplex
     
