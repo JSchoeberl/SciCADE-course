@@ -541,6 +541,8 @@ document.write(`
 
 <span class="n">sdiv</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">opdiv</span><span class="o">.</span><span class="n">ToDense</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># singular values</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;rank of div:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sdiv</span> <span class="o">&gt;</span> <span class="mf">1e-10</span><span class="p">))</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;nv =&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nv</span><span class="p">,</span> <span class="s2">&quot;nedge =&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nedge</span><span class="p">,</span> <span class="s2">&quot;nface =&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nface</span><span class="p">,</span> <span class="s2">&quot;ncell =&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetNE</span><span class="p">(</span><span class="n">VOL</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -548,6 +550,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rank of grad: 77
 rank of curl: 272
 rank of div: 206
+nv = 78 nedge = 349 nface = 478 ncell = 206
 </pre></div>
 </div>
 </div>
@@ -557,6 +560,7 @@ rank of div: 206
 <ul class="simple">
 <li><p>interprete these numbers</p></li>
 <li><p>create domains with holes and tunnels, and recompute space dimensions and ranks</p></li>
+<li><p>what are Betti numbers?</p></li>
 </ul>
 </section>
 </section>
