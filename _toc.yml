@@ -97,11 +97,20 @@ parts:
   - caption: Maxwell
     numbered: true
     chapters:
-    - file: unit7-Maxwell/Maxwell.ipynb
-    - file: unit7-Maxwell/magnetostatics.ipynb
-    - file: unit7-Maxwell/coil-simple.ipynb
-    - file: unit7-Maxwell/coil.ipynb
-    - file: unit7-Maxwell/HCurl.ipynb
-    - file: unit7-Maxwell/deRham.ipynb
-    - file: unit7-Maxwell/checkrank.ipynb            
-  
+    - file: unit7-Maxwell/1_Maxwell.ipynb
+    - file: unit7-Maxwell/2_magnetostatics.ipynb
+    - file: unit7-Maxwell/3_coil-simple.ipynb
+    - file: unit7-Maxwell/4_coil.ipynb
+    - file: unit7-Maxwell/5_HCurl.ipynb
+    - file: unit7-Maxwell/6_deRham.ipynb
+    - file: unit7-Maxwell/7_checkrank.ipynb            
+
+  - cation: Additional
+    numbered: true
+    chapters:
+    - file: additional/preconditioning.ipynb    
+    - file: additional/implementing.ipynb
+    - file: additional/bem.ipynb
+    - url: https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf
+      title: Hypercomplex
+    
