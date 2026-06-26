@@ -256,7 +256,11 @@
 <li class="toctree-l1"><a class="reference internal" href="6_deRham.html">37. The de Rham complex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_checkrank.html">38. Ranks of discrete operators</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/preconditioning.html">39. Preconditioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/implementing.html">40. Implementing Finite Elements in NGSolve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/bem.html">41. Boundary element methods</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf">Hypercomplex</a></li>
 </ul>
 
@@ -520,16 +524,16 @@ B = \operatorname{curl} \, A.
 \]</div>
 <p>Inserting the vector-potential into the system of equations, one obtains
 the second order equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f846f608-de35-4098-aa90-70f16199d052">
-<span class="eqno">(33.1)<a class="headerlink" href="#equation-f846f608-de35-4098-aa90-70f16199d052" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73030f01-0ab9-4178-b96c-cb3d2c0b63d9">
+<span class="eqno">(33.1)<a class="headerlink" href="#equation-73030f01-0ab9-4178-b96c-cb3d2c0b63d9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \operatorname{curl} \, \mu^{-1}  \operatorname{curl} A = j.
 \end{equation}\]</div>
 <p>The two original fields <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(H\)</span> can be obtained from the vector potential <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>The vector-potential <span class="math notranslate nohighlight">\(A\)</span> is not uniquely defined. One
 may add a gradient field to <span class="math notranslate nohighlight">\(A\)</span>, and the equation is still true. To obtain a unique
 solution, the so called Coloumb-Gauging can be applied:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f1f2258-6dea-49e1-9c64-52c1f9686ee3">
-<span class="eqno">(33.2)<a class="headerlink" href="#equation-5f1f2258-6dea-49e1-9c64-52c1f9686ee3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-74fdef0f-a5a5-413d-b839-c904d0739803">
+<span class="eqno">(33.2)<a class="headerlink" href="#equation-74fdef0f-a5a5-413d-b839-c904d0739803" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \operatorname{div} \, A = 0.
 \end{equation}\]</div>
 <section id="variational-formulation">
@@ -549,8 +553,8 @@ then we have more equations than unknowns. The system is still solvable, since w
 have made the assumption <span class="math notranslate nohighlight">\(\operatorname{div} \, j = 0\)</span>, and thus <span class="math notranslate nohighlight">\(j\)</span> is in the range of the <span class="math notranslate nohighlight">\(\operatorname{curl}\)</span>-
 operator. To obtain a symmetric system, we add a new scalar variable <span class="math notranslate nohighlight">\(\varphi\)</span>.
 The problem is now: Find <span class="math notranslate nohighlight">\(A \in V = ?\)</span> and <span class="math notranslate nohighlight">\(\varphi \in Q = H^1 / \mathbb{R}\)</span> such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2894c099-40c2-4775-80d0-876716bd893d">
-<span class="eqno">(33.3)<a class="headerlink" href="#equation-2894c099-40c2-4775-80d0-876716bd893d" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-e860f862-53aa-4c9a-a409-0d79d8b5704d">
+<span class="eqno">(33.3)<a class="headerlink" href="#equation-e860f862-53aa-4c9a-a409-0d79d8b5704d" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \begin{array}{ccccll}
 \int \mu^{-1} \operatorname{curl} A \, \cdot \operatorname{curl} v \, dx &amp; + &amp; 
 \int \nabla \varphi \cdot v \, dx &amp; = &amp; 

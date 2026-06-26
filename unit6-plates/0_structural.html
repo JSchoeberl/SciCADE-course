@@ -256,7 +256,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/6_deRham.html">37. The de Rham complex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/7_checkrank.html">38. Ranks of discrete operators</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/preconditioning.html">39. Preconditioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/implementing.html">40. Implementing Finite Elements in NGSolve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-topics/bem.html">41. Boundary element methods</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf">Hypercomplex</a></li>
 </ul>
 
@@ -612,8 +616,8 @@ leads to the big system: Find <span class="math notranslate nohighlight">\((w,\b
 \end{split}\]</div>
 <p>This is a mixed formulation of the abstract structure: Find <span class="math notranslate nohighlight">\(u \in V\)</span> and <span class="math notranslate nohighlight">\(p \in Q\)</span> such
 that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0957cde-281a-4c93-9e14-a82cea10641c">
-<span class="eqno">(25.1)<a class="headerlink" href="#equation-d0957cde-281a-4c93-9e14-a82cea10641c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a8d0772-3ffe-4d8c-b9c0-877a072b9f10">
+<span class="eqno">(25.1)<a class="headerlink" href="#equation-6a8d0772-3ffe-4d8c-b9c0-877a072b9f10" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{array}{ccccll}
 a(u,v) &amp; + &amp; b(v,p) &amp; = &amp; f(v) \quad &amp; \forall \, v \in V, \\[0.2em]
 b(u,q) &amp; - &amp; t^2 c(p,q) &amp; = &amp; 0 \quad &amp; \forall \, q \in Q.

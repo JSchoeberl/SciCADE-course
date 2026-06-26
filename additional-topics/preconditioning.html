@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Preconditioning &#8212; FEM with NGSolve</title>
+    <title>39. Preconditioning &#8212; FEM with NGSolve</title>
   
   
   
@@ -58,7 +58,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional-topics/preconditioning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Implementing Finite Elements in NGSolve" href="implementing.html" />
+    <link rel="next" title="40. Implementing Finite Elements in NGSolve" href="implementing.html" />
     <link rel="prev" title="38. Ranks of discrete operators" href="../unit7-Maxwell/7_checkrank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -254,7 +254,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/6_deRham.html">37. The de Rham complex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/7_checkrank.html">38. Ranks of discrete operators</a></li>
 </ul>
-<ul class="nav bd-sidenav">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">39. Preconditioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementing.html">40. Implementing Finite Elements in NGSolve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bem.html">41. Boundary element methods</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf">Hypercomplex</a></li>
 </ul>
 
@@ -450,10 +454,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement">i-tutorials: You know the theory, want to know how to implement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-teaching-material">i-FEM: teaching material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-solvers">Parallel Solvers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasure-trove">Treasure trove:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement">39.1. i-tutorials: You know the theory, want to know how to implement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-teaching-material">39.2. i-FEM: teaching material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-solvers">39.3. Parallel Solvers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasure-trove">39.4. Treasure trove:</a></li>
 </ul>
             </nav>
         </div>
@@ -466,10 +470,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="preconditioning">
-<h1>Preconditioning<a class="headerlink" href="#preconditioning" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">39. </span>Preconditioning<a class="headerlink" href="#preconditioning" title="Permalink to this heading">#</a></h1>
 <p>There are several NGSolve-tutorial dealing with using and building preconditioners</p>
 <section id="i-tutorials-you-know-the-theory-want-to-know-how-to-implement">
-<h2>i-tutorials: You know the theory, want to know how to implement<a class="headerlink" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">39.1. </span>i-tutorials: You know the theory, want to know how to implement<a class="headerlink" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docu.ngsolve.org/latest/i-tutorials/unit-2.1.1-preconditioners/preconditioner.html">Schwarz methods</a></p></li>
 <li><p><a class="reference external" href="https://docu.ngsolve.org/latest/i-tutorials/unit-2.1.4-bddc/bddc.html">Element-wise BDDC</a></p></li>
@@ -477,20 +481,20 @@ document.write(`
 </ul>
 </section>
 <section id="i-fem-teaching-material">
-<h2>i-FEM: teaching material<a class="headerlink" href="#i-fem-teaching-material" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">39.2. </span>i-FEM: teaching material<a class="headerlink" href="#i-fem-teaching-material" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jschoeberl.github.io/iFEM/multigrid/amg.html">Commuting AMG</a></p></li>
 </ul>
 </section>
 <section id="parallel-solvers">
-<h2>Parallel Solvers<a class="headerlink" href="#parallel-solvers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">39.3. </span>Parallel Solvers<a class="headerlink" href="#parallel-solvers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jschoeberl.github.io/iFEM/MPIparallel/paralleliteration.html">Distributed computing with NGSolve</a></p></li>
 <li><p><a class="reference external" href="https://ngspetsc.readthedocs.io/en/latest/">PETSc Interface</a></p></li>
 </ul>
 </section>
 <section id="treasure-trove">
-<h2>Treasure trove:<a class="headerlink" href="#treasure-trove" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">39.4. </span>Treasure trove:<a class="headerlink" href="#treasure-trove" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jschoeberl.github.io/treasuretrove/matrixfree/matfree-preconditioner.html">Matrix-free high order</a></p></li>
 </ul>
@@ -541,7 +545,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementing Finite Elements in NGSolve</p>
+        <p class="prev-next-title"><span class="section-number">40. </span>Implementing Finite Elements in NGSolve</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -561,10 +565,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement">i-tutorials: You know the theory, want to know how to implement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-teaching-material">i-FEM: teaching material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-solvers">Parallel Solvers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasure-trove">Treasure trove:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-tutorials-you-know-the-theory-want-to-know-how-to-implement">39.1. i-tutorials: You know the theory, want to know how to implement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-teaching-material">39.2. i-FEM: teaching material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-solvers">39.3. Parallel Solvers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasure-trove">39.4. Treasure trove:</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Implementing Finite Elements in NGSolve &#8212; FEM with NGSolve</title>
+    <title>40. Implementing Finite Elements in NGSolve &#8212; FEM with NGSolve</title>
   
   
   
@@ -58,8 +58,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional-topics/implementing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Boundary element methods" href="bem.html" />
-    <link rel="prev" title="Preconditioning" href="preconditioning.html" />
+    <link rel="next" title="41. Boundary element methods" href="bem.html" />
+    <link rel="prev" title="39. Preconditioning" href="preconditioning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -254,7 +254,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/6_deRham.html">37. The de Rham complex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unit7-Maxwell/7_checkrank.html">38. Ranks of discrete operators</a></li>
 </ul>
-<ul class="nav bd-sidenav">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preconditioning.html">39. Preconditioning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">40. Implementing Finite Elements in NGSolve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bem.html">41. Boundary element methods</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://project.inria.fr/ranpdes/files/2026/03/03_Schoeberl.pdf">Hypercomplex</a></li>
 </ul>
 
@@ -450,9 +454,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-lecture-notes">i-FEM Lecture notes:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-in-physical-coordinates">Element in physical coordinates:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-on-alfeld-splits">Elements on Alfeld splits:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-lecture-notes">40.1. i-FEM Lecture notes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-in-physical-coordinates">40.2. Element in physical coordinates:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-on-alfeld-splits">40.3. Elements on Alfeld splits:</a></li>
 </ul>
             </nav>
         </div>
@@ -465,9 +469,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="implementing-finite-elements-in-ngsolve">
-<h1>Implementing Finite Elements in NGSolve<a class="headerlink" href="#implementing-finite-elements-in-ngsolve" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">40. </span>Implementing Finite Elements in NGSolve<a class="headerlink" href="#implementing-finite-elements-in-ngsolve" title="Permalink to this heading">#</a></h1>
 <section id="i-fem-lecture-notes">
-<h2>i-FEM Lecture notes:<a class="headerlink" href="#i-fem-lecture-notes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">40.1. </span>i-FEM Lecture notes:<a class="headerlink" href="#i-fem-lecture-notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jschoeberl.github.io/iFEM/FEM/myFiniteElement.html">standard low order fem</a></p></li>
 <li><p><a class="reference external" href="https://jschoeberl.github.io/iFEM/pversion/myhighorder.html">standard hp-FEM</a></p></li>
@@ -475,13 +479,13 @@ document.write(`
 </ul>
 </section>
 <section id="element-in-physical-coordinates">
-<h2>Element in physical coordinates:<a class="headerlink" href="#element-in-physical-coordinates" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">40.2. </span>Element in physical coordinates:<a class="headerlink" href="#element-in-physical-coordinates" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/JSchoeberl/Hu-Lin-Zhang-Elements">Hu-Lin-Zhang element</a></p></li>
 </ul>
 </section>
 <section id="elements-on-alfeld-splits">
-<h2>Elements on Alfeld splits:<a class="headerlink" href="#elements-on-alfeld-splits" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">40.3. </span>Elements on Alfeld splits:<a class="headerlink" href="#elements-on-alfeld-splits" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jschoeberl.github.io/iFEM/plates_shells/HCT.html">HCT element</a> <br>
 <a class="reference external" href="https://github.com/NGSolve/ngsolve/blob/master/comp/HCTspace.cpp">Implementation</a></p></li>
@@ -525,7 +529,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Preconditioning</p>
+        <p class="prev-next-title"><span class="section-number">39. </span>Preconditioning</p>
       </div>
     </a>
     <a class="right-next"
@@ -533,7 +537,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Boundary element methods</p>
+        <p class="prev-next-title"><span class="section-number">41. </span>Boundary element methods</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -553,9 +557,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-lecture-notes">i-FEM Lecture notes:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-in-physical-coordinates">Element in physical coordinates:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-on-alfeld-splits">Elements on Alfeld splits:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fem-lecture-notes">40.1. i-FEM Lecture notes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-in-physical-coordinates">40.2. Element in physical coordinates:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-on-alfeld-splits">40.3. Elements on Alfeld splits:</a></li>
 </ul>
   </nav></div>
 
